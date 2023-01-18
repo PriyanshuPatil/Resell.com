@@ -1,0 +1,73 @@
+.main_mobiles_container {
+  background-color: #f3f3f3;
+}
+.priceFilter {
+  border: 1px solid rgba(128, 128, 128, 0.567);
+  outline: none;
+}
+
+.category_select_and_sort > div {
+  border: 1px solid rgba(255, 0, 0, 0);
+}
+.mobiles_filter_data_ads_container {
+  /* border: 1px solid red; */
+  width: 90%;
+  max-width: 1247px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.mobiles_filter_container {
+  /* border: 1px solid black; */
+  width: 20%;
+}
+.mobiles_data_sort_container {
+  /* border: 1px solid black; */
+  width: 65%;
+}
+.mobiles_data_sort_container > div:nth-child(1) {
+  /* border: 1px solid red; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.mobiles_data_container {
+  /* border: 1px solid rgba(0, 255, 255, 0); */
+}
+.mobiles_ads_container {
+  /* border: 1px solid black; */
+  width: 12%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.mobiles_ads_container > img {
+  width: 100%;
+}
+/* MEDIA QUERY */
+@media screen and (min-width: 1164px) {
+}
+@media screen and (max-width: 1164px) and (min-width: 481px) {
+  .mobiles_ads_container {
+    display: none;
+  }
+  .mobiles_filter_container {
+    display: none;
+  }
+  .mobiles_data_sort_container {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 481px) {
+  .mobiles_ads_container {
+    display: none;
+  }
+  .mobiles_filter_container {
+    display: none;
+  }
+  .mobiles_data_sort_container {
+    width: 100%;
+  }
+}
