@@ -1,0 +1,131 @@
+.mainNav {
+    /* width: 99.5%; */
+    width:100%;
+    height: auto;
+    border-bottom: 1px solid rgba(167, 164, 164, 0.911);
+    margin: auto;
+    padding-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+.upperNavbarIcons{
+  display:flex;
+  justify-content:space-between;
+  width:100%;
+}
+  
+  .Navbar {
+    /* background-color: whitesmoke; */
+    background-color: white;
+    height: 50px;
+    width: 98%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    left: 0;
+    /* border: 1px solid red; */
+  }
+  
+  button {
+    cursor: pointer;
+  }
+  
+  .logoBox {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    vertical-align:middle;
+    width: 12%;
+    font-size: 20px;
+    /* border: 1px solid red; */
+  }
+  
+  .logo {
+    height: 35px;
+    width: 120px;
+    /* border: 1px solid red; */
+  }
+  
+  .hamburger {
+    color: gray;
+    height: 40px;
+    padding: 0px;
+    margin: 0px;
+    /* border: 1px solid red; */
+  }
+  
+  .login {
+    text-decoration: none;
+    color: rgba(128, 128, 128, 0.911);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .loginText {
+    display: flex;
+    /* border: 1px solid green; */
+    font-size: 15px;
+    padding: 0;
+  }
+  
+  .postAd {
+    white-space: nowrap;
+    padding: 5px 10px;
+    cursor: pointer;
+    background-color: rgb(252, 236, 82);
+    border: 1px solid orange;
+  }
+  
+  .NavbarsmallScreen {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    width: 96%;
+    height: 35px;
+    margin: auto;
+  }
+  
+  .NavbarlargeScreen {
+    display: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 35px;
+    /* border: 1px solid green; */
+  }
+
+
+  
+  
+  @media screen and (max-width: 880px) {
+    .login {
+      display: none;
+    }
+    .loginText {
+      display: none;
+    }
+    .Navbar {
+      padding: 0px 4px;
+    }
+    .logoBox {
+      width: 40%;
+    }
+    .NavbarsmallScreen {
+      display: flex;
+      margin-top: 2px;
+    }
+    .NavbarlargeScreen {
+      display: none;
+    }
+    .upperNavbarIcons{
+      display: none;
+    }
+  }
+  

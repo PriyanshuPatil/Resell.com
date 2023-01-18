@@ -1,5 +1,6 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+import Navbar from './Components/Navbar/Navbar';
 import { applyDarkTheme, applyLightTheme } from './redux/theme/theme.actions';
 import { useDispatch, useSelector } from "react-redux";
 function App() {
@@ -7,9 +8,12 @@ function App() {
   const theme=useSelector((store)=>store.Theme.theme)
   return (
     <div >
-  {"Unit-5  =>  UNIT-6"}
+      {/* navbar  */}
+      <Navbar />
+  {/* {"Unit-5  =>  UNIT-6"} */}
     </div>
   );
 }
 
 export default App;
+
