@@ -1,0 +1,32 @@
+.filter_main_container {
+  background-color: white;
+  border-radius: 5px;
+  padding: 1rem 0;
+}
+.filter_head {
+  background-color: white;
+  padding: 1rem 0;
+}
+.filter_ctg {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+.filter_ctg > div {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
+  margin-top: -1rem;
+}
+.filter_ctg > div:nth-child(1) {
+  padding: 0.5rem 0;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
