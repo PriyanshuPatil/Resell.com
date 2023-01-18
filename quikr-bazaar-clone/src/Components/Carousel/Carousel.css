@@ -1,0 +1,39 @@
+.carousel_main {
+  position: relative;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  /* border: 1px solid red; */
+}
+.carousel_next_btn {
+  position: absolute;
+  right: 2%;
+  top: 45%;
+  background-color: rgb(255, 255, 255);
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: none;
+  color: rgb(0, 0, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.carousel_prev_btn {
+  position: absolute;
+  left: 2%;
+  top: 45%;
+  background-color: rgb(255, 255, 255);
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: none;
+  color: rgb(0, 0, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
