@@ -1,16 +1,16 @@
 import React from "react";
-import "./AdDetails.css";
+import adtl from "./AdDetails.module.css";
 
 const AdDetails = ({ details }) => {
   return (
-    <div className="ad_details_main_container">
-      <div className="inner_section_a">
-        <h1 className="ad_details_heading">Ad Details</h1>
+    <div className={adtl.ad_details_main_container}>
+      <div className={adtl.inner_section_a}>
+        <h1 className={adtl.ad_details_heading}>Ad Details</h1>
       </div>
       {/*  */}
 
-      <div className="inner_section_b">
-        <div className="ad_details_main_inner">
+      <div className={adtl.inner_section_b}>
+        <div className={adtl.ad_details_main_inner}>
           <div>
             <div>
               <p>Ad ID</p>
@@ -48,7 +48,7 @@ const AdDetails = ({ details }) => {
         </div>
         <hr />
         {/*  */}
-        <div className="ad_details_main_inner">
+        <div className={adtl.ad_details_main_inner}>
           <div>
             <div>
               <p>Brand Name</p>

@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import "react-tabs/style/react-tabs.css";
-import AdDetails from "./Contents/AdDetails";
-import Guidelines from "./Contents/Buyer Guidelines/Guidelines";
-import DescriptionDetails from "./Contents/DescriptionDetails";
-import PostedBy from "./Contents/Posted By/PostedBy";
-import Specifications from "./Contents/Specifications";
-import SimilarCategory from "./Contents/YouMayAlso/SimilarCategory";
+import AdDetails from "./AdDetails";
+import Guidelines from "./Buyer Guidelines/Guidelines";
+import DescriptionDetails from "./DescriptionDetails";
+import PostedBy from "./Posted By/PostedBy";
+import Specifications from "./Specifications";
+import SimilarCategory from "./YouMayAlso/SimilarCategory";
 import "./DetailsTab.css";
 
 function DetailsTab({ details }) {

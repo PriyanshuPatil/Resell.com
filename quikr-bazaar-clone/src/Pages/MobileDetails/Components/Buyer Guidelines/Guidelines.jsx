@@ -1,14 +1,14 @@
 import React from "react";
-import "./Guidelines.css";
+import gdlns from "./Guidelines.module.css";
 import { MdVerifiedUser } from "react-icons/md";
 
 const Guidelines = () => {
   return (
-    <div className="guidelines_main">
+    <div className={gdlns.guidelines_main}>
       <div>
-        <h1 className="guidelines_heading">Buyer Guidelines</h1>
+        <h1 className={gdlns.guidelines_heading}>Buyer Guidelines</h1>
       </div>
-      <div className="guidelines_main_inner">
+      <div className={gdlns.guidelines_main_inner}>
         <div>
           <MdVerifiedUser style={{ fontSize: "1.5rem", color: "#95d4a9" }} />
           <p>Be careful when paying offline</p>
