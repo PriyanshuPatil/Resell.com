@@ -1,0 +1,92 @@
+.posted_by_main {
+  width: 90%;
+  margin: auto;
+  max-width: 1247px;
+}
+.postedby_heading {
+  /* border-bottom: 1px solid rgba(128, 128, 128, 0.251); */
+  text-align: left;
+}
+.user_details_container {
+  width: 80%;
+  margin: auto;
+  background-color: rgba(240, 248, 255, 0.456);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 10px;
+  padding: 1rem 0;
+}
+.user_details_container > div:nth-child(1) > div {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(
+    135deg,
+    rgb(0, 207, 210) 0%,
+    rgb(0, 96, 167) 100%
+  );
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.user_details_container > div:nth-child(2) {
+  display: flex;
+  align-items: center;
+  border-left: 1px solid rgba(128, 128, 128, 0.324);
+}
+
+.user_details_container > div:nth-child(2) > img {
+  width: 15%;
+}
+.user_details_container > div:nth-child(3) > button {
+  color: #0083ca;
+  border: 1.5px solid rgb(0, 131, 202);
+  font-size: 1rem;
+  background-color: transparent;
+  padding: 0.9rem 1.8rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.user_details_container > div:nth-child(3) > button:hover {
+  background-color: rgba(0, 131, 202, 0.03);
+}
+@media screen and (min-width: 1164px) {
+}
+@media screen and (max-width: 1164px) and (min-width: 481px) {
+  .user_details_container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .user_details_container > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .user_details_container > div:nth-child(2) {
+    display: flex;
+    align-items: center;
+    border-left: 1px solid rgba(128, 128, 128, 0);
+  }
+}
+@media screen and (max-width: 481px) {
+  .user_details_container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .user_details_container > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .user_details_container > div:nth-child(2) {
+    display: flex;
+    align-items: center;
+    border-left: 1px solid rgba(128, 128, 128, 0);
+  }
+}
