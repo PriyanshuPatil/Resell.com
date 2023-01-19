@@ -8,6 +8,7 @@ import {MdOutlineBusinessCenter} from 'react-icons/md';
 import {GoDesktopDownload} from 'react-icons/go';
 import {MdLocalOffer} from 'react-icons/md';
 import {FaStoreAlt} from 'react-icons/fa';
+import Login from "../Login/Login";
 
 
 function Navbar() {
@@ -86,9 +87,7 @@ function Navbar() {
                   style={{ fontSize: "23px", fontWeight: "100" }}
                 />
                 <div className={Styles.loginText}>
-                  <p>Login</p>
-                  <p>/</p>
-                  <p>Register</p>
+                  <Login />
                 </div>
               </NavLink>
             </h3>
