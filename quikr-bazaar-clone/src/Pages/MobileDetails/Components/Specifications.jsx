@@ -1,14 +1,14 @@
 import React from "react";
-import "./Specifications.css";
+import spcf from "./Specifications.module.css";
 const Specifications = ({ details }) => {
   return (
     <div>
       <div>
-        <h1 className="specifications_heading">Specifications</h1>
+        <h1 className={spcf.specifications_heading}>Specifications</h1>
       </div>
       {/*  */}
 
-      <div className="specification_main_inner">
+      <div className={spcf.specification_main_inner}>
         <h3>No Specifications available</h3>
       </div>
     </div>

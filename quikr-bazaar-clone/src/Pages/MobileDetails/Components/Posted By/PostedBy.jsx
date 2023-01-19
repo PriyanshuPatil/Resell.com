@@ -1,14 +1,14 @@
 import React from "react";
-import "./PostedBy.css";
+import pstdb from "./PostedBy.module.css";
 
 const PostedBy = ({ details }) => {
   return (
-    <div className="posted_by_main">
+    <div className={pstdb.posted_by_main}>
       <div>
-        <h1 className="postedby_heading">Posted By</h1>
+        <h1 className={pstdb.postedby_heading}>Posted By</h1>
       </div>
       {/*  */}
-      <div className="user_details_container">
+      <div className={pstdb.user_details_container}>
         <div>
           <div>
             <h1>U</h1>

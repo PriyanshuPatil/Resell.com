@@ -1,19 +1,19 @@
 import React from "react";
-import "./SimilarCategory.css";
+import smctg from "./SimilarCategory.module.css";
 
 const SimilarCategory = () => {
   return (
     <>
       <hr style={{ width: "65%", marginTop: "3rem", marginBottom: "3rem" }} />
-      <div className="SimilarCategory_main">
+      <div className={smctg.SimilarCategory_main}>
         {/*  */}
-        <div className="SimilarCategory_main_inner">
+        <div className={smctg.SimilarCategory_main_inner}>
           <div>
             <p>You May Also Like</p>
             <p>Inspired by your browsing history</p>
           </div>
           {/*  */}
-          <div className="may_category_cards">
+          <div className={smctg.may_category_cards}>
             {/*  */}
             <div>
               <div>

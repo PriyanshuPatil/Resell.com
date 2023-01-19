@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import "./MobileDetails.css";
-import CarouselA from "../Carousel/Carousel";
-import Loading from "../Loading";
+import mbdt from "./MobileDetails.module.css";
+import CarouselA from "../../Components/Carousel/Carousel";
+import Loading from "../../Components/Loading/Loading";
 import DescriptionCard from "./DescriptionCard";
-import DetailsTab from "../DetailsTab";
+import DetailsTab from "../../Pages/MobileDetails/Components/DetailsTab";
 
 const MobileDetails = () => {
   const [loading, setLoading] = useState(true);
@@ -29,11 +29,11 @@ const MobileDetails = () => {
 
   if (!loading) {
     return (
-      <div className="mobileDetails_main_container">
+      <div className={mbdt.mobileDetails_main_container}>
         {/*  */}
-        <div className="mobileDetails_main_inner_container">
-          <div className="images_and_description">
-            <div className="all_product_images">
+        <div className={mbdt.mobileDetails_main_inner_container}>
+          <div className={mbdt.images_and_description}>
+            <div className={mbdt.all_product_images}>
               <CarouselA
                 img1={data.images[0].url}
                 img2={data.images[1].url}
@@ -41,7 +41,7 @@ const MobileDetails = () => {
                 img4={data.images[3].url}
               />
             </div>
-            <div className="all_product_images_carousel">
+            <div className={mbdt.all_product_images_carousel}>
               <CarouselA
                 img1={data.images[0].url}
                 img2={data.images[1].url}
@@ -49,7 +49,7 @@ const MobileDetails = () => {
                 img4={data.images[3].url}
               />
             </div>
-            <div className="all_product_description">
+            <div className={mbdt.all_product_description}>
               <DescriptionCard desc={data} />
             </div>
           </div>

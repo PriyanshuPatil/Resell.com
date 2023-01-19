@@ -1,13 +1,13 @@
 import React from "react";
-import "./Filters.css";
+import fls from "./Filters.module.css";
 
 const Filters = () => {
   return (
-    <div className="filter_main_container">
-      <div className="filter_head">Filter By</div>
+    <div className={fls.filter_main_container}>
+      <div className={fls.filter_head}>Filter By</div>
       <hr style={{ width: "90%" }} />
       {/*  */}
-      <div className="filter_ctg">
+      <div className={fls.filter_ctg}>
         <div>Brand Name</div>
         <div>
           <input type="checkbox" />
@@ -36,7 +36,7 @@ const Filters = () => {
         {/*  */}
       </div>
       {/*  */}
-      <div className="filter_ctg">
+      <div className={fls.filter_ctg}>
         <div>Price Range</div>
         <div>
           <input type="checkbox" />
@@ -65,7 +65,7 @@ const Filters = () => {
         {/*  */}
       </div>
       {/*  */}
-      <div className="filter_ctg">
+      <div className={fls.filter_ctg}>
         <div>Operation System</div>
         <div>
           <input type="checkbox" />

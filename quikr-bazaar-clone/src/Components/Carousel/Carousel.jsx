@@ -7,13 +7,13 @@ import {
   ButtonNext,
 } from "pure-react-carousel";
 import "pure-react-carousel/dist/react-carousel.es.css";
-import "./Carousel.css";
+import csl from "./Carousel.module.css";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 
 export default function CarouselA({ img1, img2, img3, img4 } = []) {
   return (
     <CarouselProvider
-      className="carousel_main"
+      className={csl.carousel_main}
       naturalSlideWidth={100}
       naturalSlideHeight={67}
       totalSlides={4}
@@ -62,10 +62,10 @@ export default function CarouselA({ img1, img2, img3, img4 } = []) {
           />
         </Slide>
       </Slider>
-      <ButtonBack className="carousel_prev_btn">
+      <ButtonBack className={csl.carousel_prev_btn}>
         <BsChevronLeft />
       </ButtonBack>
-      <ButtonNext className="carousel_next_btn">
+      <ButtonNext className={csl.carousel_next_btn}>
         <BsChevronRight />
       </ButtonNext>
     </CarouselProvider>
