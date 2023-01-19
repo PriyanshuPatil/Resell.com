@@ -1,0 +1,41 @@
+.PostAddForm_container {
+  border: 2px solid green;
+  height: auto;
+  width: 60%;
+  margin: auto;
+}
+
+input {
+  border: 2px solid green;
+  padding: 10px;
+}
+.input_group {
+  margin-bottom: 40px;
+  position: relative;
+}
+
+
+ label {
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 0px;
+  color: rgb(25, 23, 23);
+  cursor: text;
+  transition: 0.2s;
+} 
+input:focus ~ label,
+input:valid ~ label,
+textarea:focus ~ label,
+textarea:valid ~ label {
+  top: -25px;
+  font-size: 12px;
+}
+
+
+.mobile_add_form{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap:10px  20px
+}
