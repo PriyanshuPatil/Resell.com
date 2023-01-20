@@ -23,6 +23,7 @@ const MobilesCard = ({ data }) => {
           View Details
         </button>
       </div>
+      
       {/*  */}
     </div>
   );

@@ -21,6 +21,8 @@ const Category_List=[
     {id:6,title:"Jobs",icon:<TfiBag size={40}/>},
     {id:7,title:"Services",icon:<VscTools size={40}/>},
 ]
+
+
 const PostAd = () => {
     const [activeCategory,setCategory]=useState(0);   
      const [activeCategoryName,setCategoryName]=useState("")
