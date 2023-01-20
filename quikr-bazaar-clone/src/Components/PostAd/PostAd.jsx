@@ -10,6 +10,7 @@ import { TbSofa } from 'react-icons/tb';
 import { MdOutlineMapsHomeWork } from 'react-icons/md';
 import { VscTools } from 'react-icons/vsc';
 import selectadd from "../../Assets/Select_Add_Image.png"
+import PostAdForm from "../PostAdForm/PostAdForm";
 
 const Category_List=[
     {id:1,title:"Cars & Bikes",icon:<FaCarSide size={40}/>},
@@ -21,22 +22,28 @@ const Category_List=[
     {id:7,title:"Services",icon:<VscTools size={40}/>},
 ]
 const PostAd = () => {
-    const [activeCategory,setCategory]=useState(0)
+    const [activeCategory,setCategory]=useState(0);   
+     const [activeCategoryName,setCategoryName]=useState("")
   return (
     <div className="PostAdd_container">
    <div className="PostAdd_category_container">
     <div id="PostAdd_category_list_container">Select a category</div>
     {Category_List.map((el)=>{
    return (
-   <div className="PostAdd_category_list_container" style={el.id==activeCategory?{backgroundColor:"green",color:"white"}:{backgroundColor:"",color:"green"}} onClick={()=>(setCategory(el.id))} >
+   <div className="PostAdd_category_list_container" style={el.id==activeCategory?{backgroundColor:"green",color:"white"}:{backgroundColor:"",color:"green"}} onClick={()=>(setCategory(el.id),setCategoryName(el.title))} >
     <div>{el.icon}</div>
     <div>{el.title}</div>
    </div>)
     })}
    </div>
    <div className="PostAdd_form__container">
-    <h2 className="PostAdd_form__container_Text">Post Free Add</h2>
+    {/* default add form */}
+    {activeCategory==0 && <div><h2 className="PostAdd_form__container_Text">Post Free Add</h2>
     <img width={"80%"}  src={selectadd} />  
+    </div>}
+    {/* add form */}
+    {activeCategory!=0 && <PostAdForm Category={activeCategoryName}/>}
+    
     </div>
   
     
