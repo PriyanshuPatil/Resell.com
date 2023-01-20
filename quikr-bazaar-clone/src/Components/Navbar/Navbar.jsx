@@ -10,6 +10,8 @@ import { MdLocalOffer } from "react-icons/md";
 import { FaStoreAlt } from "react-icons/fa";
 import {AiOutlineDown} from 'react-icons/ai';
 import Login from '../Login/Login';
+import SideDrawer from '../SideDrawer/SideDrawer';
+
 
 
 function Navbar() {
@@ -106,13 +108,14 @@ function Navbar() {
           {/* logo and hamburger */}
           <div className={Styles.logoBox}>
             <h1 className={Styles.hamburger}>
-              <RxHamburgerMenu
+              {/* <RxHamburgerMenu
                 style={{
                   margin: "10px",
                   padding: "0px",
                   verticalAlign: "middle"
                 }}
-              />
+              /> */}
+              <SideDrawer/>
             </h1>
             <NavLink to="/">
               <img src={Logo} className={Styles.logo} alt="logo" />
