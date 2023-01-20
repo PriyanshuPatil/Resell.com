@@ -45,7 +45,10 @@ function Login() {
   // login handler
   const handleLogin = (e) => {
     e.preventDefault();
-      dispatch(login(loginCreds));
+    dispatch(login(loginCreds)).then(() => Logintoaster());
+  };
+
+  function Logintoaster() {
       toast({
         title: "Login Successful",
         description: "...redirecting",
@@ -53,16 +56,21 @@ function Login() {
         duration: 4000,
         isClosable: true,
       });
-  };
+      onClose();
+  }
 
   const handleLogout = (e) => {
     e.preventDefault();
-    dispatch(logout())
-  }
+    dispatch(logout());
+  };
 
   return (
     <>
-      <Button variant="ghost" colorScheme="pink" onClick={!isLoggedIn? onOpen: handleLogout}>
+      <Button
+        variant="ghost"
+        colorScheme="pink"
+        onClick={!isLoggedIn ? onOpen : handleLogout}
+      >
         {isLoggedIn ? "Logout" : "Login"}
       </Button>
       <Modal
