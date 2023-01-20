@@ -1,4 +1,4 @@
-import "./PostAdForm.css";
+import style from './PostAdForm.module.css'
 import React, { useRef, useState } from 'react'
 import { BsGift,BsCheckCircle ,BsCamera} from 'react-icons/bs';
 import {GrAddCircle} from 'react-icons/gr';
@@ -28,58 +28,58 @@ const PostAdForm = ({Category}) => {
     isClosable: true,
   })
   return (
-    <div className="PostAddForm_container">
-    <div className="PostAddForm_heading">
+    <div className={style.PostAddForm_container}>
+    <div className={style.PostAddForm_heading}>
         <h2 as="h2">Post {Category} Free Ad</h2>
         <div as="div"><BsGift/> Post ans earn ₹50 QCash in your account</div>
     </div>
-    <div className="mobile_form_div">
-    <form ref={form} className="mobile_add_form" >
-        <div className="input_group">
+    <div className={style.mobile_form_div}>
+    <form ref={form} className={style.mobile_add_form} >
+        <div className={style.input_group}>
        <input type="tel" id="number" required />
        <label for="number">Brand Name</label>
        </div>
-        <div className="input_group">
+        <div className={style.input_group}>
           <input type="tel" id="number" required />
         <label for="number">Modal</label>
       </div>
-      <div className="input_group">
+      <div className={style.input_group}>
        <input type="tel" id="number" required />
        <label for="number">Year of Purchase</label>
        </div>
-        <div className="input_group">
+        <div className={style.input_group}>
           <input type="tel" id="number" required />
         <label for="number">Physical Condition</label>
       </div>
-      <div className="input_group">
+      <div className={style.input_group}>
        <input type="tel" id="number" required />
        <label for="number">Ad title</label>
        </div>
-        <div className="input_group">
+        <div className={style.input_group}>
           <input type="tel" id="number" required />
         <label for="number">Price</label>
       </div>
-      <div className="input_group">
+      <div className={style.input_group}>
           <input type="tel" id="number" required />
         <label for="number">Mobile Number</label>
       </div>
-      <div className="input_group">
+      <div className={style.input_group}>
           <input type="tel" id="number" required />
         <label for="number">Email Id</label>
       </div>
-      <div className="input_group">
+      <div className={style.input_group}>
           <input type="tel" id="number" required />
         <label for="number">Pincode</label>
       </div>
-      <div className="input_group">
+      <div className={style.input_group}>
           <input type="tel" id="number" required />
         <label for="number">You are</label>
       </div>
     </form>
-    <div className="mobile_form_postad_container">
+    <div className={style.mobile_form_postad_container}>
 
 
-    <div className="mobile_add_photo">
+    <div className={style.mobile_add_photo}>
       <div>
         <BsCamera size={25}/>  
       </div>
@@ -87,11 +87,11 @@ const PostAdForm = ({Category}) => {
       <GrAddCircle size={25}/> 
       </div>
     </div>
-    <div className="mobile_add_suscription">
-      <div className="mobile_add_suscription_title">
+    <div className={style.mobile_add_suscription}>
+      <div className={style.mobile_add_suscription_title}>
         Types of Ads 
       </div>
-    <Accordion className="mobile_add_suscription_container">
+    <Accordion className={style.mobile_add_suscription_container}>
     <AccordionItem as="div" onClick={()=>{setPlanID(0)}}>
       <AccordionButton as="div">
         <BsCheckCircle style={plan==1?{color:"green"}:{color:"black"}} />
@@ -125,7 +125,7 @@ const PostAdForm = ({Category}) => {
   </AccordionItem>
 </Accordion>
  </div> 
-       <button onClick={()=>SubmitAd()} as="button" className="submit_form"> Post Ad</button>
+       <button onClick={()=>SubmitAd()} as="button" className={style.submit_form}> Post Ad</button>
     </div>
  </div>
  </div>
