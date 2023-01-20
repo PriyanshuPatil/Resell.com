@@ -1,14 +1,18 @@
 /*Post Add Container ---start */
 .PostAdd_container {
   display: flex;
-  width: 60%;
+  width: 74%;
   margin: auto;
   border: 0.001rem solid gray;
   margin: 20px auto;
 }
 @media (min-width: 0px) and (max-width: 767px) {
   .PostAdd_container {
-    width: 80%;
+    width: 90%;
+    height: auto;
+    border: 0.01rem solid gray;
+    margin: 20px auto;
+    padding-right: 10px;
   }
 }
 /*Post Add Container ---end */
@@ -34,6 +38,7 @@
   padding: 20px 20px;
   text-align: center;
   border: 0.001rem solid gray;
+
 }
 .PostAdd_category_list_container div:nth-child(2) {
   margin-top: 10px;
@@ -73,6 +78,12 @@
 @media (min-width: 0px) and (max-width: 850px) {
   .PostAdd_form__container_Text {
     font-size: 25px;
+  }
+  .PostAddForm_heading h2{
+    font-size: 14px;
+  }
+  .PostAddForm_heading div{
+    font-size: 14px;
   }
 }
 /* default farm--end */
