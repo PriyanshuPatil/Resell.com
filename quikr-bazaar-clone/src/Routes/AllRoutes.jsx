@@ -10,7 +10,7 @@ const AllRoutes = () => {
     <Routes>
       <Route path="/mobiles" element={<Mobiles />} />
       <Route path="/mobile_details" element={<MobileDetails />} />
-      <Route path="/mobile_form" element={<PostAd/>} />
+      <Route path="/postad" element={<PostAd/>} />
     </Routes>
   );
 };
