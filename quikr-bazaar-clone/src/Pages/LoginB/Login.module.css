@@ -12,6 +12,8 @@
   /* border: 1px solid black; */
   background-color: aliceblue;
   width: 45%;
+  max-width: 720px;
+  min-width: 720px;
   margin: auto;
   display: flex;
   align-items: center;

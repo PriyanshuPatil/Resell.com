@@ -3,7 +3,6 @@ import "./App.css";
 import Navbar from "./Components/Navbar/Navbar";
 import { applyDarkTheme, applyLightTheme } from "./redux/theme/theme.actions";
 import { useDispatch, useSelector } from "react-redux";
-import Login from "./Components/Login/Login";
 import AllRoutes from "./Routes/AllRoutes";
 
 function App() {

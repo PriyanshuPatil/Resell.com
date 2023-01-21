@@ -1,8 +1,42 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { HiCurrencyRupee } from "react-icons/hi";
+import { useDispatch } from "react-redux";
+import { login } from "../../redux/auth/auth.actions";
+import { useToast } from "@chakra-ui/react"
 
 const InnerB = () => {
+  let navigate = useNavigate();
+
+  const [loginCreds, setLoginCreds] = useState({});
+
+  let dispatch = useDispatch();
+  const toast = useToast()
+
+  const handleChange = (e) => {
+    const {name, value} = e.target
+    setLoginCreds({
+      ...loginCreds,
+      [name]: value,
+    })
+
+    console.log(loginCreds)
+  }
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    dispatch(login(loginCreds)).then(() => {
+      toast({
+        title: "Login Successful",
+        description: "...redirecting",
+        status: "success",
+        duration: 4000,
+        isClosable: true,
+      });
+    }).then(() => navigate("/"))
+  }
+
+
   return (
     <>
       {/*  */}
@@ -17,10 +51,11 @@ const InnerB = () => {
       {/*  */}
       <form action="">
         {/* <label htmlFor="">Email</label> */}
-        <input type="text" placeholder="Enter your email" />
+        <input onChange={handleChange} name="email" type="email" placeholder="Enter your email" />
         {/* <label htmlFor="">Password</label> */}
-        <input type="text" placeholder="Enter your password" />
+        <input onChange={handleChange} name="password" type="password" placeholder="Enter your password" />
         <input
+          onClick={handleLogin}
           type="button"
           value="Continue"
           style={{
