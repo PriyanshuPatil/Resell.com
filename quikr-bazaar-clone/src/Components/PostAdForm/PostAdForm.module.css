@@ -26,14 +26,21 @@
   width: 60%;
   margin: auto;
   margin-top: 20px;
+  padding-bottom: 20px;
+}
+.mobile_add_photo div input{
+  display: block;
+  margin: auto;
+  font-size: 12px;
 }
 .mobile_add_photo div {
   border-style: dotted;
-  padding: 25px 25px;
-  width: 35px;
   border-radius: 20px;
-  margin-bottom: 20px;
-  margin-left: -10%;
+   margin: auto;
+  margin-bottom: 10px;
+ margin-left: 10%;
+  border: 3px solid black;
+  padding: 5px;
 }
 .mobile_add_suscription_title {
   background-color: rgb(77, 61, 137);
