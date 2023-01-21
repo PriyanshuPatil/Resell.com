@@ -1,0 +1,72 @@
+.login_main_container {
+  /* border: 2px solid red; */
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: rgba(0, 0, 0, 0.182); */
+}
+.login_main_inner_container {
+  /* border: 1px solid black; */
+  background-color: aliceblue;
+  width: 45%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  border-radius: 10px;
+}
+.login_main_inner_container_a {
+  height: 100%;
+  width: 45%;
+  background-color: aliceblue;
+  padding: 1.2rem 0;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.login_main_inner_container_a_a {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.login_main_inner_container_a_a > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: small;
+}
+.login_main_inner_container_b {
+  width: 55%;
+  /* border: 1px solid cyan; */
+  padding: 1rem 1rem;
+  background-color: white;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.login_main_inner_container_b > div > form {
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+}
+.login_main_inner_container_b > div > form > label {
+  font-size: small;
+}
+.login_main_inner_container_b > div > form > input {
+  height: 35px;
+  font-size: 1rem;
+  outline: none;
+  padding: 0 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid grey;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+.login_main_inner_container_b > div > form > input:focus {
+  border: 1px solid rgb(0, 126, 190);
+}
