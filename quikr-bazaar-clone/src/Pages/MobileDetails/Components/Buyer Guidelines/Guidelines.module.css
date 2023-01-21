@@ -1,0 +1,43 @@
+.guidelines_main {
+  /* border: 1px solid red; */
+  width: 90%;
+  margin: auto;
+  max-width: 1247px;
+}
+.guidelines_heading {
+  text-align: left;
+}
+.guidelines_main_inner {
+  width: 80%;
+  /* border: 1px solid red; */
+  margin: auto;
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 10px;
+  padding: 1rem 0;
+}
+.guidelines_main_inner > div {
+  width: 95%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.guidelines_main_inner > div > p {
+  width: 80%;
+  text-align: justify;
+}
+@media screen and (min-width: 1164px) {
+}
+@media screen and (max-width: 1164px) and (min-width: 481px) {
+  .guidelines_main_inner {
+    width: 100%;
+    font-size: x-small;
+  }
+}
+@media screen and (max-width: 481px) {
+  .guidelines_main_inner {
+    width: 100%;
+    font-size: small;
+  }
+}

@@ -62,6 +62,7 @@ function Login() {
   const handleLogout = (e) => {
     e.preventDefault();
     dispatch(logout());
+
   };
 
   return (

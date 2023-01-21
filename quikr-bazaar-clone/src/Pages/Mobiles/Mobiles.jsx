@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import "./Mobiles.css";
-import MobilesCard from "./MobilesCard";
-import Filters from "./Filters";
+import mbls from "./Mobiles.module.css";
+import MobilesCard from "../../Components/MobilesCard/MobilesCard";
+import Filters from "../../Components/Filters/Filters";
 
 const Mobiles = () => {
   //   const [loading, setLoading] = useState(true);
@@ -21,31 +21,31 @@ const Mobiles = () => {
   }, []);
 
   return (
-    <div className="main_mobiles_container">
-      <div className="mobiles_filter_data_ads_container">
+    <div className={mbls.main_mobiles_container}>
+      <div className={mbls.mobiles_filter_data_ads_container}>
         {/*  */}
-        <div className="mobiles_filter_container">
+        <div className={mbls.mobiles_filter_container}>
           <Filters />
         </div>
-        <div className="mobiles_data_sort_container">
-          <div className="category_select_and_sort">
-            <div className="category_selected">category</div>
-            <div className="sort_mobiles_select">
+        <div className={mbls.mobiles_data_sort_container}>
+          <div className={mbls.category_select_and_sort}>
+            <div className={mbls.category_selected}>category</div>
+            <div className={mbls.sort_mobiles_select}>
               <p>Sort by</p>
-              <select class="priceFilter">
+              <select className={mbls.priceFilter}>
                 <option value="popularityDesc">Popularity</option>
                 <option value="priceDesc">Price: High to Low</option>
                 <option value="priceAsc">Price: Low to High</option>
               </select>
             </div>
           </div>
-          <div className="mobiles_data_container">
+          <div className={mbls.mobiles_data_container}>
             {data.map((mobile) => (
               <MobilesCard key={mobile.id} data={mobile} />
             ))}
           </div>
         </div>
-        <div className="mobiles_ads_container">
+        <div className={mbls.mobiles_ads_container}>
           <img
             src="https://tpc.googlesyndication.com/daca_images/simgad/14781010476110498296"
             alt="ad"

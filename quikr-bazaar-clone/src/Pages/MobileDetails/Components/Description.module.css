@@ -1,0 +1,12 @@
+.description_body {
+  width: 90%;
+  margin: auto;
+  text-align: justify;
+  line-height: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.description_heading {
+  border-bottom: 1px solid rgba(128, 128, 128, 0.219);
+  text-align: left;
+}
