@@ -14,6 +14,7 @@
 .SimilarCategory_main_inner > div:nth-child(1) {
   line-height: 0.3rem;
   margin-bottom: 2rem;
+  text-align: center;
 }
 .SimilarCategory_main_inner > div:nth-child(1) > p:nth-child(2) {
   color: grey;
@@ -35,6 +36,12 @@
   border-radius: 10px;
   padding: 0.5rem 0;
   cursor: pointer;
+}
+.may_category_cards > div > div:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .may_category_cards > div > div:nth-child(1) > img {
   width: 50%;

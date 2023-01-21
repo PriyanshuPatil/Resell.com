@@ -2,7 +2,7 @@ import React from "react";
 import mobCard from "./MobileCard.module.css";
 
 const MobilesCard = ({ data }) => {
-  console.log(data.images);
+  // console.log(data.images);
   //
   return (
     <div className={mobCard.mobile_card_main_container}>

@@ -6,6 +6,7 @@
 .filter_head {
   background-color: white;
   padding: 1rem 0;
+  text-align: center;
 }
 .filter_ctg {
   display: flex;
