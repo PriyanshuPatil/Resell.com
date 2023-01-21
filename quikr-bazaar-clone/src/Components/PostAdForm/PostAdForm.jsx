@@ -2,6 +2,7 @@ import style from "./PostAdForm.module.css";
 import React, { useRef, useState } from "react";
 import { BsGift, BsCheckCircle, BsCamera } from "react-icons/bs";
 import { GrAddCircle } from "react-icons/gr";
+import { useDispatch, useSelector } from "react-redux";
 import {
   Accordion,
   AccordionItem,
@@ -11,8 +12,10 @@ import {
   Box,
 } from "@chakra-ui/react";
 import { useToast } from "@chakra-ui/react";
+import { postAdvertisements } from "../../redux/advertisements/advertisements.actions";
 
 const PostAdForm = ({ Category }) => {
+  const dispatch=useDispatch()
   const toast = useToast();
   const form = useRef();
   const [plan, setPlanID] = useState(0);
@@ -28,6 +31,7 @@ const PostAdForm = ({ Category }) => {
     email_id: "",
     pincode: "",
     you_are: "",
+    url:""
   });
   const handlechange = () => {
     setFormData({
@@ -41,11 +45,13 @@ const PostAdForm = ({ Category }) => {
       email_id: form.current.email_id.value,
       pincode: form.current.pincode.value,
       you_are: form.current.you_are.value,
+      url:file
     });
     console.log(formData);
   };
   function handleUpload(e) {
-    setFile(URL.createObjectURL(e.target.files[0]));
+      setFile(URL.createObjectURL(e.target.files[0]));
+    
     toast({
       title: "Image SuccesFully Added",
       description: "Now You can see image on Ui.",
@@ -57,9 +63,10 @@ const PostAdForm = ({ Category }) => {
     console.log(e.target.files);
    
   } 
-  console.log(file)
+
  
-  const SubmitAd = () =>
+  const SubmitAd = () =>{
+    dispatch(postAdvertisements(formData))  ;
     toast({
       title: "Congratulations",
       description: "Your Ad has been live now on Resell site.",
@@ -67,7 +74,7 @@ const PostAdForm = ({ Category }) => {
       duration: 9000,
       position: "top",
       isClosable: true,
-    });
+    })};
   return (
     <div className={style.PostAddForm_container}>
       <div className={style.PostAddForm_heading}>
@@ -79,43 +86,43 @@ const PostAdForm = ({ Category }) => {
       <div className={style.mobile_form_div}>
         <form ref={form} className={style.mobile_add_form}>
           <div className={style.input_group}>
-            <input name="brand_name" type="tel" id="number" />
+            <input onChange={handlechange} name="brand_name" type="tel" id="number" />
             <label for="number">Brand Name</label>
           </div>
           <div className={style.input_group}>
-            <input name="modal_name" type="tel" id="number" />
+            <input onChange={handlechange} name="modal_name" type="tel" id="number" />
             <label for="number">Modal</label>
           </div>
           <div className={style.input_group}>
-            <input name="year_purchase" type="number" id="number" />
+            <input onChange={handlechange} name="year_purchase" type="number" id="number" />
             <label for="number">Year of Purchase</label>
           </div>
           <div className={style.input_group}>
-            <input name="physical_condition" type="tel" id="number" />
+            <input onChange={handlechange} name="physical_condition" type="tel" id="number" />
             <label for="number">Physical Condition</label>
           </div>
           <div className={style.input_group}>
-            <input name="ad_tital" type="tel" id="number" required />
+            <input onChange={handlechange} name="ad_tital" type="tel" id="number" required />
             <label for="number">Ad title</label>
           </div>
           <div className={style.input_group}>
-            <input name="price" type="tel" id="number" required />
+            <input onChange={handlechange} name="price" type="tel" id="number" required />
             <label for="number">Price</label>
           </div>
           <div className={style.input_group}>
-            <input name="mobile_number" type="number" id="number" required />
+            <input onChange={handlechange} name="mobile_number" type="number" id="number" required />
             <label for="number">Mobile Number</label>
           </div>
           <div className={style.input_group}>
-            <input name="email_id" type="tel" id="number" required />
+            <input onChange={handlechange} name="email_id" type="tel" id="number" required />
             <label for="number">Email Id</label>
           </div>
           <div className={style.input_group}>
-            <input name="pincode" type="tel" id="number" />
+            <input onChange={handlechange} name="pincode" type="tel" id="number" />
             <label for="number">Pincode</label>
           </div>
           <div className={style.input_group}>
-            <input name="you_are" type="tel" id="number" />
+            <input onChange={handlechange} name="you_are" type="tel" id="number" />
             <label for="number">You are</label>
           </div>
         </form>
@@ -127,7 +134,8 @@ const PostAdForm = ({ Category }) => {
                 multiple
                   type="file"
                   name="fileis"
-                  id="fileis"
+                  id="fileis" 
+                  onChange={handlechange}
                   onClick={handleUpload}
                 />
             )}
@@ -158,6 +166,8 @@ const PostAdForm = ({ Category }) => {
                   <Box as="span" flex="1" textAlign="left">
                     Premium Ad
                   </Box>
+               
+                  
                 </AccordionButton>
                 <AccordionPanel pb={4}>-50 Ad views</AccordionPanel>
               </AccordionItem>
