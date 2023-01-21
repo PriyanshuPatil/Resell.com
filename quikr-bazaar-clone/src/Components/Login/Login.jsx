@@ -17,9 +17,11 @@ import {
   Heading,
   Checkbox,
   Text,
+  useToast,
 } from "@chakra-ui/react";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../redux/auth/auth.actions";
+import { logout } from "../../redux/auth/auth.actions";
 
 function Login() {
   const [loginCreds, setLoginCreds] = useState({});
@@ -28,6 +30,9 @@ function Login() {
   //Login in Redux
   const { isLoggedIn } = useSelector((store) => store.Auth);
   const dispatch = useDispatch();
+
+  //using toast
+  const toast = useToast();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -40,13 +45,34 @@ function Login() {
   // login handler
   const handleLogin = (e) => {
     e.preventDefault();
-    dispatch(login(loginCreds));
+    dispatch(login(loginCreds)).then(() => Logintoaster());
+  };
+
+  function Logintoaster() {
+      toast({
+        title: "Login Successful",
+        description: "...redirecting",
+        status: "success",
+        duration: 4000,
+        isClosable: true,
+      });
+      onClose();
+  }
+
+  const handleLogout = (e) => {
+    e.preventDefault();
+    dispatch(logout());
+
   };
 
   return (
     <>
-      <Button variant="ghost" colorScheme="pink" onClick={onOpen}>
-        Login
+      <Button
+        variant="ghost"
+        colorScheme="pink"
+        onClick={!isLoggedIn ? onOpen : handleLogout}
+      >
+        {isLoggedIn ? "Logout" : "Login"}
       </Button>
       <Modal
         isCentered
@@ -60,7 +86,7 @@ function Login() {
           <ModalCloseButton />
 
           <ModalBody>
-            <FormControl pb="10" onSubmit={handleLogin}>
+            <FormControl pb="10">
               <FormLabel>Email</FormLabel>
               <Input
                 name="email"
@@ -124,7 +150,12 @@ function Login() {
           </ModalBody>
 
           <ModalFooter>
-            <Button w="100%" variant="solid" colorScheme="whatsapp">
+            <Button
+              onClick={handleLogin}
+              w="100%"
+              variant="solid"
+              colorScheme="whatsapp"
+            >
               Login
             </Button>
           </ModalFooter>
