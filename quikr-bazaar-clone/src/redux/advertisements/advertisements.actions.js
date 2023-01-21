@@ -13,6 +13,7 @@ export const getAdvertisements = () => async(dispatch) => {
         dispatch ({type: GET_ADVERTISEMENTS_ERROR })
     }
 }
+
 export const postAdvertisements = (post_data) => async(dispatch) => {
     dispatch ({type: POST_ADVERTISEMENTS_LOADING});
     try {

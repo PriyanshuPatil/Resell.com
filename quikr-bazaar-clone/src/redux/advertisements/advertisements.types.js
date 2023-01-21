@@ -7,4 +7,5 @@ export const POST_ADVERTISEMENTS_LOADING = "post/advertisements/loading";
 export const POST_ADVERTISEMENTS_SUCCESS = "post/advertisements/success";
 export const POST_ADVERTISEMENTS_ERROR = "post/advertisements/error";
 // Reset
+
 export const RESET_ADVERTISEMENTS = "advertisements/reset";

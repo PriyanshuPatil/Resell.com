@@ -166,6 +166,8 @@ const PostAdForm = ({ Category }) => {
                   <Box as="span" flex="1" textAlign="left">
                     Premium Ad
                   </Box>
+               
+                  
                 </AccordionButton>
                 <AccordionPanel pb={4}>-50 Ad views</AccordionPanel>
               </AccordionItem>

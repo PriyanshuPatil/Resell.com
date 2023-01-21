@@ -14,6 +14,8 @@ import style from "./PostAd.module.css";
 const Category_List = [
   { id: 1, title: "Cars & Bikes", icon: <FaCarSide size={40} /> },
   { id: 2, title: "Mobiles & Tablets", icon: <ImMobile size={40} /> },
+
+  
   {
     id: 3,
     title: "Electronics & Applications",

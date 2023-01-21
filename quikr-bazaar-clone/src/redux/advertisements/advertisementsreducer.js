@@ -19,6 +19,7 @@ export const advertisementsReducer = (
   state = advertisementsInitialState,
   { type, payload }
 ) => {
+  
   switch (type) {
     case GET_ADVERTISEMENTS_LOADING: {
       return {

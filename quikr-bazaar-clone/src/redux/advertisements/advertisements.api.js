@@ -2,6 +2,7 @@
 
 import axios from "axios"
 
+
 export const getAdvertisementsAPI = async () => {
     let response = await axios.get("https://easy-red-sockeye-robe.cyclic.app/postad");
     return response.data;
