@@ -44,8 +44,8 @@ import {GiHandBag} from 'react-icons/gi';
 import {FaCarSide} from 'react-icons/fa';
 import {RiMotorbikeFill} from 'react-icons/ri';
 
-import Login from '../Login/Login';
-import Logo from '../../Assets/logo.png';
+import Login from '../../Pages/LoginB/Login';
+// import Logo from '../../Assets/logo.png';
 
 
 

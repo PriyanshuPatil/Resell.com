@@ -152,7 +152,7 @@ function Navbar() {
             <div>
               <h3 className={Styles.login_icon}>
                 <FaRegUserCircle style={{ fontSize: "23px", fontWeight: "100" }} />
-                <NavLink to="/login">
+                <NavLink to="/login" style={{color:'black',textDecoration:'none'}}>
                 <h5 onClick={isLoggedIn&&logoutHandler}>{isLoggedIn ? "Logout" : "Login"}</h5>
                 </NavLink>
               </h3>

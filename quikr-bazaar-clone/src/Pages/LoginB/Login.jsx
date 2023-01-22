@@ -2,7 +2,7 @@ import React from "react";
 import lgn from "./Login.module.css";
 import InnerA from "./InnerA";
 import InnerB from "./InnerB";
-//
+
 
 const Login = () => {
   return (
@@ -28,3 +28,4 @@ const Login = () => {
 };
 
 export default Login;
+
