@@ -12,7 +12,7 @@
   margin-bottom: 8rem;
 }
 .SimilarCategory_main_inner > div:nth-child(1) {
-  line-height: 0.3rem;
+  /* line-height: 0.3rem; */
   margin-bottom: 2rem;
   text-align: center;
 }
