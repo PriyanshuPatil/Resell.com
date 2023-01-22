@@ -1,12 +1,20 @@
+import { useToast } from "@chakra-ui/react";
 import React from "react";
 import { useState } from "react";
 import "./finalpage.css";
 
 const Finalpage = () => {
     const [blur, setBlur] = useState(true);
+    let toast = useToast();
+
     const handleBlur = () => {
-        setBlur(!blur);
+      setBlur(!blur)
     }
+
+    const handleSubmit = () => {
+      toast({position: 'top', description: 'Message Delivered Sucessfully' })
+    }
+
 
   return (
     <div className="prod-deets-main-container">
@@ -15,7 +23,7 @@ const Finalpage = () => {
         <h1>Product Title Here</h1>
         <img
           src="https://i.scdn.co/image/ab67616d0000b2736b915e407b70e121e06fe979"
-          alt="prod-image"
+          alt="prod-img"
           width="300px"
         />
         <h3 style={{color:"green"}}>Price: ₹1,00,000</h3>
@@ -36,7 +44,7 @@ const Finalpage = () => {
             <textarea name="w3review" rows="8" cols="50" placeholder="send message directly to the seller from here and make him/her notify">
             </textarea>
         </div>
-        <button style={{fontSize:"15px", padding:"1rem", backgroundColor:"#00a62c", color:"#fff", borderRadius:"10px"}}>Send Message</button>
+        <button onClick={handleSubmit} style={{fontSize:"15px", padding:"1rem", backgroundColor:"#00a62c", color:"#fff", borderRadius:"10px"}}>Send Message</button>
       </div>
     </div>
   );
