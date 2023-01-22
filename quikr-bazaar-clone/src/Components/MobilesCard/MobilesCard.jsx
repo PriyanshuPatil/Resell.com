@@ -1,7 +1,12 @@
 import React from "react";
 import mobCard from "./MobileCard.module.css";
+import { useNavigate } from "react-router-dom";
 
 const MobilesCard = ({ data }) => {
+  const navigate = useNavigate();
+  const handleClick = (id) => {
+    navigate("/product_details", { state: { id } });
+  };
   // console.log(data.images);
   //
   return (
@@ -19,11 +24,14 @@ const MobilesCard = ({ data }) => {
       {/*  */}
       <div className={mobCard.mobile_card_price_view_details}>
         <h2>{data.price.value.display}</h2>
-        <button className={mobCard.mobilecard_view_details_button}>
+        <button
+          onClick={() => handleClick(data.id)}
+          className={mobCard.mobilecard_view_details_button}
+        >
           View Details
         </button>
       </div>
-      
+
       {/*  */}
     </div>
   );
