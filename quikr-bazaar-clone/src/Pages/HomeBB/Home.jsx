@@ -1,4 +1,3 @@
-import "./App.css";
 import Carousel from "./Carousel";
 import CarouselB from "./CarouselB";
 import CarouselC from "./CarouselC";
@@ -6,9 +5,16 @@ import CarouselD from "./CarouselD";
 import Stacks from "./Stacks";
 
 function Home() {
-    <>
+  return (
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        border: "1px solid red",
+      }}
+    >
       {/* ================================ */}
-      <>
+      <div>
         <h1
           style={{
             width: "90%",
@@ -21,11 +27,12 @@ function Home() {
           Most Popular Products
         </h1>{" "}
         <Carousel />
-      </>
-
-      <Stacks />
+      </div>
+      <div>
+        <Stacks />
+      </div>
       {/* ===================================== */}
-      <>
+      <div>
         <h1
           style={{
             width: "90%",
@@ -38,9 +45,9 @@ function Home() {
           Trending Ads
         </h1>{" "}
         <CarouselB />
-      </>
+      </div>
       {/* ------------------------------ */}
-      <>
+      <div>
         <h1
           style={{
             width: "90%",
@@ -52,27 +59,30 @@ function Home() {
         >
           Home And Lifestyle
         </h1>{" "}
-        <CarouselC />
-      </>
+        {/* <CarouselC /> */}
+      </div>
       {/* ========================= */}
-      <>
-        <h1
-          style={{
-            width: "90%",
-            maxWidth: "1247px",
-            margin: "auto",
-            marginTop: "50px",
-            marginBottom: "20px",
-          }}
-        >
-          Electronics and appliances
-        </h1>{" "}
-      </>
-      {/* ==================== */}
-      <CarouselD />
+      <div>
+        <div>
+          <h1
+            style={{
+              width: "90%",
+              maxWidth: "1247px",
+              margin: "auto",
+              marginTop: "50px",
+              marginBottom: "20px",
+            }}
+          >
+            Electronics and appliances
+          </h1>{" "}
+        </div>
+        {/* ==================== */}
+        <CarouselD />
+      </div>
+
       {/* ================ */}
-    </>
-  
+    </div>
+  );
 }
 
 export default Home;
