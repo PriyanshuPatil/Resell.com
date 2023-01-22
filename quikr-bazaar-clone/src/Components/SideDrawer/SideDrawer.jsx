@@ -1,6 +1,4 @@
 import React from "react";
-import Logo from '../../Assets/logo.png';
-import { RxHamburgerMenu } from "react-icons/rx";
 import { Link as NavLink } from "react-router-dom";
 import {
   Button,
@@ -15,16 +13,29 @@ import {
   VStack,
   Text,
   Box,
-  Menu,
   Image,
+  Menu,
   MenuButton,
   MenuList,
   MenuItem,
-
+  MenuItemOption,
+  MenuGroup,
+  MenuOptionGroup,
+  MenuDivider,
 } from "@chakra-ui/react";
 
 import {ChevronDownIcon } from '@chakra-ui/icons';
-
+import { RxHamburgerMenu } from "react-icons/rx";
+import {GiSofa} from 'react-icons/gi';
+import {AiOutlineHome} from 'react-icons/ai';
+import {GiWashingMachine} from 'react-icons/gi';
+import {HiOutlineUserGroup} from 'react-icons/hi';
+import { ImMobile } from 'react-icons/im';
+import {RiBearSmileFill} from 'react-icons/ri';
+import {CiMoneyCheck1} from 'react-icons/ci';
+import {MdLocalOffer} from 'react-icons/md';
+import {FiDownload} from 'react-icons/fi';
+import {CiLocationOn} from 'react-icons/ci';
 import {AiOutlineUser} from 'react-icons/ai';
 import {HiOutlineCurrencyRupee} from 'react-icons/hi';
 import {TbFileSpreadsheet} from 'react-icons/tb';
@@ -33,13 +44,17 @@ import {GiHandBag} from 'react-icons/gi';
 import {FaCarSide} from 'react-icons/fa';
 import {RiMotorbikeFill} from 'react-icons/ri';
 
+import Login from '../Login/Login';
+import Logo from '../../Assets/logo.png';
+
+
 
 const MenuCategories = () =>{
   return (
     <>
       <Menu>
         <MenuButton
-           as={Button} 
+          //  as={Button} 
            rightIcon={<ChevronDownIcon />}
            paddingTop="10px"
            paddingBottom="10px"
@@ -57,33 +72,33 @@ const MenuCategories = () =>{
           more Categories
         </MenuButton>
         <MenuList>
-          <MenuItem>
-            <NavLink to='/sports-hobbies-fashion'>Sports,Hobbies,Fashion</NavLink>
+          {/* <MenuItem>
+            <NavLink to='/sports-hobbies-fashion' style={{textDecoration:"none",color:'gray'}}>Sports,Hobbies,Fashion</NavLink>
           </MenuItem>
           <MenuItem>
-            <NavLink to='/education'>Education</NavLink>
+            <NavLink to='/education'>Education style={{textDecoration:"none",color:'gray'}} </NavLink>
           </MenuItem>
           <MenuItem>
-            <NavLink to='/commercial'>Commercial</NavLink>
+            <NavLink to='/commercial'>Commercial style={{textDecoration:"none",color:'gray'}} </NavLink>
           </MenuItem>
           <MenuItem>
-            <NavLink to='/pets-pet-care'>Pets & Pet Care</NavLink>
+            <NavLink to='/pets-pet-care' style={{textDecoration:"none",color:'gray'}}>Pets & Pet Care</NavLink>
           </MenuItem>
           <MenuItem>
-            <NavLink to='/home-lifestyle'>Home & Lifestyle</NavLink>
+            <NavLink to='/home-lifestyle' style={{textDecoration:"none",color:'gray'}}> Home & Lifestyle</NavLink>
           </MenuItem>
           <MenuItem>
-            <NavLink to='/entertainment'>Entertainment</NavLink>
+            <NavLink to='/entertainment'>Entertainmen style={{textDecoration:"none",color:'gray'}}t </NavLink>
           </MenuItem>
           <MenuItem>
-            <NavLink to='/coins-stamps'>Coins-Stamps</NavLink>
+            <NavLink to='/coins-stamps' style={{textDecoration:"none",color:'gray'}}> Coins-Stamps</NavLink>
           </MenuItem>
           <MenuItem>
-            <NavLink to='/events'>Events</NavLink>
+            <NavLink to='/events'>Event style={{textDecoration:"none",color:'gray'}}s </NavLink>
           </MenuItem>
           <MenuItem>
-            <NavLink to='/matrimonial'>Matrimonial</NavLink>
-          </MenuItem>
+            <NavLink to='/matrimonial'>Matrimonia style={{textDecoration:"none",color:'gray'}}l </NavLink>
+          </MenuItem> */}
         </MenuList>
       </Menu>
     </>
@@ -97,26 +112,25 @@ function SideDrawer() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
 
-
   return (
     <>
       <Button
         ref={btnRef}
-        colorScheme="none"
+        // colorScheme="none"
         size={"xs"}
         p={0}
+        marginBottom='18px'
         onClick={onOpen}
       >
         <RxHamburgerMenu
           style={{
-            height: "90%",
-            width: "90%",
-            margin: "auto",
+            height: "100%",
+            width: "100%",
             color: "gray",
-            verticalAlign: "middle"
           }}
         />
       </Button>
+
       <Drawer
         size="xs"
         isOpen={isOpen}
@@ -128,11 +142,12 @@ function SideDrawer() {
         <DrawerContent>
           <DrawerCloseButton />
           <DrawerHeader>
-            <Image src='http://localhost:3000/static/media/logo.8b500399a5e81609e1a4.png' alt='logo' heght='40px' />
+            <Image src='http://localhost:3000/static/media/logo.8b500399a5e81609e1a4.png' alt='logo' w={'40%'} height='40px' />
           </DrawerHeader>
 
           <DrawerBody>
             <VStack align="left">
+
               <Button
                 borderBottom="1px solid gray"
                 paddingTop="10px"
@@ -146,8 +161,9 @@ function SideDrawer() {
                   color: "teal"
                 }}
               >
-                Login/Register
+                <Login />
               </Button>
+
               <Button
                 paddingTop="10px"
                 paddingBottom="10px"
@@ -161,10 +177,11 @@ function SideDrawer() {
                   color: "teal"
                 }}
               >
-                <NavLink to='/my-account'>
+                <NavLink to='/my-account' style={{textDecoration:"none",color:'gray'}}> 
                   <AiOutlineUser />My Account
                 </NavLink>
               </Button>
+
               <Button
                 paddingTop="10px"
                 paddingBottom="10px"
@@ -176,10 +193,11 @@ function SideDrawer() {
                   color: "teal"
                 }}
               >
-                <NavLink to='/orders-payments'>
+                <NavLink to='/orders-payments' style={{textDecoration:"none",color:'gray'}}> 
                   <HiOutlineCurrencyRupee/> Orders & Payments
                 </NavLink>
               </Button>
+
               <Button
                 paddingTop="10px"
                 paddingBottom="10px"
@@ -192,10 +210,11 @@ function SideDrawer() {
                   color: "teal"
                 }}
               >
-                <NavLink to='/my-ads'>
+                <NavLink to='/my-ads' style={{textDecoration:"none",color:'gray'}}> 
                  <TbFileSpreadsheet/>My Ads
                 </NavLink>
               </Button>
+
               <Button
                 disabled={true}
                 bg="white"
@@ -208,6 +227,7 @@ function SideDrawer() {
               >
                 Categories
               </Button>
+
               <Button
                 paddingTop="10px"
                 paddingBottom="10px"
@@ -219,10 +239,11 @@ function SideDrawer() {
                   color: "teal"
                 }}
               >
-                <NavLink to='/services'>
-                 <FaTools/>Services
+                <NavLink to='/services'  style={{textDecoration:"none",color:'gray'}}>
+                 <FaTools />Services
                 </NavLink>
               </Button>
+
               <Button
                 paddingTop="10px"
                 paddingBottom="10px"
@@ -234,10 +255,11 @@ function SideDrawer() {
                   color: "teal"
                 }}
               >
-                <NavLink to='/jobs'>
-                  <GiHandBag/>Jobs
+                <NavLink to='/jobs' style={{textDecoration:"none",color:'gray'}}>
+                  <GiHandBag />Jobs
                 </NavLink>
               </Button>
+
               <Button
                 paddingTop="10px"
                 paddingBottom="10px"
@@ -249,10 +271,11 @@ function SideDrawer() {
                   color: "teal"
                 }}
               >
-                <NavLink to='/cars'>
+                <NavLink to='/cars' style={{textDecoration:"none",color:'gray'}}>
                   <FaCarSide />Cars
                 </NavLink>
               </Button>
+
               <Button
                 paddingTop="10px"
                 paddingBottom="10px"
@@ -264,10 +287,11 @@ function SideDrawer() {
                   color: "teal"
                 }}
               >
-                <NavLink to='/bikes'>
-                  <RiMotorbikeFill/>Bikes
+                <NavLink to='/bikes' style={{textDecoration:"none",color:'gray'}}>
+                  <RiMotorbikeFill />Bikes
                 </NavLink>
               </Button>
+
               <Button
                 paddingTop="10px"
                 paddingBottom="10px"
@@ -279,8 +303,11 @@ function SideDrawer() {
                   color: "teal"
                 }}
               >
-                <NavLink to='/furniture-decor'>Furniture & Decor</NavLink>
+                <NavLink to='/furniture-decor' style={{textDecoration:"none",color:'gray'}}> 
+                <GiSofa /> Furniture & Decor
+                </NavLink>
               </Button>
+
               <Button
                 paddingTop="10px"
                 paddingBottom="10px"
@@ -292,8 +319,11 @@ function SideDrawer() {
                   color: "teal"
                 }}
               >
-                <NavLink to='/electronics-appliances'>Electronics & Appliances</NavLink>
+                <NavLink to='/electronics-appliances' style={{textDecoration:"none",color:'gray'}}> 
+                 <GiWashingMachine/> Electronics & Appliances
+                </NavLink>
               </Button>
+
               <Button
                 paddingTop="10px"
                 paddingBottom="10px"
@@ -305,8 +335,11 @@ function SideDrawer() {
                   color: "teal"
                 }}
               >
-                <NavLink to='/homes'>Homes</NavLink>
+                <NavLink to='/homes' style={{textDecoration:"none",color:'gray'}}>
+                <AiOutlineHome />  Homes
+                </NavLink>
               </Button>
+
               <Button
                 paddingTop="10px"
                 paddingBottom="10px"
@@ -318,8 +351,11 @@ function SideDrawer() {
                   color: "teal"
                 }}
               >
-                <NavLink to='/co-working-spaces'>Co-Working Spaces</NavLink>
+                <NavLink to='/co-working-spaces' style={{textDecoration:"none",color:'gray'}}>
+                <HiOutlineUserGroup/> Co-Working Spaces
+                </NavLink>
               </Button>
+
               <Button
                 paddingTop="10px"
                 paddingBottom="10px"
@@ -331,8 +367,11 @@ function SideDrawer() {
                   color: "teal"
                 }}
               >
-                <NavLink to='/mobiles-tablets'>Mobiles & Tablets</NavLink>
+                <NavLink to='/mobiles-tablets' style={{textDecoration:"none",color:'gray'}}> 
+                <ImMobile /> Mobiles & Tablets
+                </NavLink>
               </Button>
+
               <Button
                 paddingTop="10px"
                 paddingBottom="10px"
@@ -344,8 +383,11 @@ function SideDrawer() {
                   color: "teal"
                 }}
               >
-                <NavLink to='/kids-toys'>Kids & Toys</NavLink>
+                <NavLink to='/kids-toys' style={{textDecoration:"none",color:'gray'}}> 
+                <RiBearSmileFill/> Kids & Toys
+                </NavLink>
               </Button>
+
               <Button
                 paddingTop="10px"
                 paddingBottom="10px"
@@ -359,6 +401,7 @@ function SideDrawer() {
               >
                 <MenuCategories />
               </Button>
+
               <Button
                 disabled={true}
                 bg="white"
@@ -369,11 +412,12 @@ function SideDrawer() {
                 color='gray'
                 _hover={{
                   background: "white"
-                  // color: "teal.500",
+                  
                 }}
               >
                 OTHERS
               </Button>
+
               <Button
                 paddingTop="10px"
                 paddingBottom="10px"
@@ -385,8 +429,11 @@ function SideDrawer() {
                   color: "teal"
                 }}
               >
-                <NavLink to='/for-businesses'>For Businesses</NavLink>
+                <NavLink to='/for-businesses' style={{textDecoration:"none",color:'gray'}}> 
+                <CiMoneyCheck1/> For Businesses
+                </NavLink>
               </Button>
+
               <Button
                 paddingTop="10px"
                 paddingBottom="10px"
@@ -398,34 +445,41 @@ function SideDrawer() {
                   color: "teal"
                 }}
               >
-                <NavLink to='/deals-offers'>Deals & Offers</NavLink>
+                <NavLink to='/deals-offers' style={{textDecoration:"none",color:'gray'}}  >
+                  <MdLocalOffer/>Deals & Offers
+                </NavLink>
               </Button>
+
               <Button
                 paddingTop="10px"
                 paddingBottom="10px"
                 borderRadius="0px"
                 justifyContent="left"
+                color='gray'
                 bg="white"
                 _hover={{
                   background: "gray.50",
                   color: "teal"
                 }}
               >
-                All India
+               <CiLocationOn/> All India
               </Button>
+
               <Button
                 paddingTop="10px"
                 paddingBottom="10px"
                 borderRadius="0px"
                 justifyContent="left"
                 bg="white"
+                color='gray'
                 _hover={{
                   background: "gray.50",
                   color: "teal"
                 }}
               >
-                Download Apps
+                <FiDownload/>Download Apps
               </Button>
+
             </VStack>
           </DrawerBody>
         </DrawerContent>
@@ -435,3 +489,4 @@ function SideDrawer() {
 }
 
 export default SideDrawer;
+
