@@ -17,11 +17,13 @@
   padding: 1rem 0;
 }
 .guidelines_main_inner > div {
+  /* border: 1px solid red; */
   width: 95%;
   margin: auto;
   display: flex;
   align-items: center;
   gap: 1rem;
+  margin-bottom: 1rem;
 }
 .guidelines_main_inner > div > p {
   width: 80%;
