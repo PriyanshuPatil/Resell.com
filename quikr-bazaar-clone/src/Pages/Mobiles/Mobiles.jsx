@@ -14,7 +14,7 @@ const Mobiles = () => {
   //
   useEffect(() => {
     axios
-      .get(`https://courageous-umbrella-moth.cyclic.app/products`)
+      .get(`https://courageous-umbrella-moth.cyclic.app/mobile`)
       .then((res) => setData(res.data))
       .catch((err) => console.log(err));
     // setTimeout(loadingTimer, 1500);

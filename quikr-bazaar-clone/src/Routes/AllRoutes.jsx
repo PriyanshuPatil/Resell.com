@@ -9,7 +9,7 @@ import Home from "../Pages/HomeBB/Home";
 const AllRoutes = () => {
   return (
     <Routes>
-      <Route path="/home" element={<Home />} />
+      <Route path="/" element={<Home />} />
       <Route path="/all_products" element={<Mobiles />} />
       <Route path="/product_details" element={<MobileDetails />} />
       <Route path="/postad" element={<PostAd />} />
