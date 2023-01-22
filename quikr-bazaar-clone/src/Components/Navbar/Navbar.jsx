@@ -9,10 +9,22 @@ import { GoDesktopDownload } from "react-icons/go";
 import { MdLocalOffer } from "react-icons/md";
 import { FaStoreAlt } from "react-icons/fa";
 import {AiOutlineDown} from 'react-icons/ai';
-import Login from '../Login/Login';
+import SideDrawer from '../SideDrawer/SideDrawer';
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { logout } from "../../redux/auth/auth.actions";
+
 
 
 function Navbar() {
+
+  const { isLoggedIn } = useSelector((store) => store.Auth);
+  const dispatch = useDispatch();
+  const logoutHandler = () => {
+    dispatch(logout());
+  }
+
+
   return (
     <div className={Styles.NavbarHolder}>
       {/* upper icons */}
@@ -106,13 +118,14 @@ function Navbar() {
           {/* logo and hamburger */}
           <div className={Styles.logoBox}>
             <h1 className={Styles.hamburger}>
-              <RxHamburgerMenu
+              {/* <RxHamburgerMenu
                 style={{
                   margin: "10px",
                   padding: "0px",
                   verticalAlign: "middle"
                 }}
-              />
+              /> */}
+              <SideDrawer/>
             </h1>
             <NavLink to="/">
               <img src={Logo} className={Styles.logo} alt="logo" />
@@ -135,7 +148,9 @@ function Navbar() {
             <div>
               <h3 className={Styles.login_icon}>
                 <FaRegUserCircle style={{ fontSize: "23px", fontWeight: "100" }} />
-                <Login/>
+                <NavLink to="/login">
+                <h5 onClick={isLoggedIn&&logoutHandler}>{isLoggedIn ? "Logout" : "Login"}</h5>
+                </NavLink>
               </h3>
             </div>
             <NavLink to="/postad">

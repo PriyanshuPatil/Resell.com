@@ -14,11 +14,37 @@ const Mobiles = () => {
   //
   useEffect(() => {
     axios
-      .get(`https://courageous-umbrella-moth.cyclic.app/mobile`)
+      .get(`https://courageous-umbrella-moth.cyclic.app/products`)
       .then((res) => setData(res.data))
       .catch((err) => console.log(err));
     // setTimeout(loadingTimer, 1500);
   }, []);
+  //
+  const handleFilterChange = (e) => {
+    console.log(e.target.value);
+    if (e.target.value === "priceAsc") {
+      let response = axios
+        .get(
+          "https://courageous-umbrella-moth.cyclic.app/mobile?_sort=price.value.raw&order=asc"
+        )
+        .then((res) => setData(res.data));
+    }
+    if (e.target.value === "priceDesc") {
+      axios
+        .get(
+          "https://courageous-umbrella-moth.cyclic.app/mobile?_sort=price.value.raw&_order=desc"
+        )
+        .then((res) => setData(res.data));
+    }
+    if (e.target.value === "popularityDesc") {
+      axios
+        .get(
+          "https://courageous-umbrella-moth.cyclic.app/mobile?_sort=score&_order=desc"
+        )
+        .then((res) => setData(res.data));
+    }
+  };
+  //
 
   return (
     <div className={mbls.main_mobiles_container}>
@@ -32,7 +58,10 @@ const Mobiles = () => {
             <div className={mbls.category_selected}>category</div>
             <div className={mbls.sort_mobiles_select}>
               <p>Sort by</p>
-              <select className={mbls.priceFilter}>
+              <select
+                onChange={(e) => handleFilterChange(e)}
+                className={mbls.priceFilter}
+              >
                 <option value="popularityDesc">Popularity</option>
                 <option value="priceDesc">Price: High to Low</option>
                 <option value="priceAsc">Price: Low to High</option>
@@ -40,9 +69,10 @@ const Mobiles = () => {
             </div>
           </div>
           <div className={mbls.mobiles_data_container}>
-            {data.map((mobile) => (
-              <MobilesCard key={mobile.id} data={mobile} />
-            ))}
+            {data.length > 0 &&
+              data.map((mobile) => (
+                <MobilesCard key={mobile.id} data={mobile} />
+              ))}
           </div>
         </div>
         <div className={mbls.mobiles_ads_container}>

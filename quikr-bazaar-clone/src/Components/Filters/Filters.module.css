@@ -6,20 +6,24 @@
 .filter_head {
   background-color: white;
   padding: 1rem 0;
+  text-align: center;
 }
 .filter_ctg {
-  display: flex;
-  flex-direction: column;
+  width: 100%;
+  margin: auto;
   background-color: white;
 }
 .filter_ctg > div {
-  width: 90%;
+  width: 80%;
   margin: auto;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 2rem;
-  margin-top: -1rem;
+  gap: 1rem;
+}
+.filter_ctg > div > input {
+  height: 20px;
+  width: 20px;
 }
 .filter_ctg > div:nth-child(1) {
   padding: 0.5rem 0;

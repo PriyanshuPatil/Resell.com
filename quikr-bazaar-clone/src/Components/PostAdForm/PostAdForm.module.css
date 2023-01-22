@@ -1,0 +1,143 @@
+.PostAddForm_container {
+  margin: auto;
+}
+.mobile_form_div {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+.PostAddForm_heading {
+  display: flex;
+  gap: 30px;
+  margin: auto;
+  padding-left: 30px;
+}
+.PostAddForm_heading div {
+  margin: auto;
+}
+
+
+.mobile_add_form {
+  width: 100%;
+  padding: 20px 20px;
+}
+.mobile_add_photo {
+  border-radius: 20px;
+  display: flex;
+  gap: 30px;
+  width: 60%;
+  margin: auto;
+  margin-top: 20px;
+  padding-bottom: 20px;
+}
+.mobile_add_photo div input{
+  display: block;
+  margin: auto;
+  font-size: 12px;
+}
+.mobile_add_photo div {
+  border-style: dotted;
+  border-radius: 20px;
+   margin: auto;
+  margin-bottom: 10px;
+ margin-left: 10%;
+  border: 3px solid black;
+  padding: 5px;
+}
+.mobile_add_suscription_title {
+  background-color: rgb(77, 61, 137);
+  padding: 10px;
+  color: white;
+}
+.mobile_add_suscription {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  width: 70%;
+  margin: auto;
+}
+.mobile_add_suscription_container {
+  display: grid;
+  gap: 10px;
+  margin: auto;
+}
+.mobile_add_suscription_container > div {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  background-color: rgb(255, 255, 255);
+}
+
+.mobile_add_suscription_container > div > div {
+  display: flex;
+  gap: 20px;
+}
+.submit_form {
+  display: block;
+  background-color: yellow;
+  color: black;
+  font-weight: 500;
+  font-size: 16px;
+  width: 70%;
+  text-align: center;
+  padding: 10px;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+/* input effect */
+input {
+  padding: 10px;
+  width: 100%;
+  font-size: medium;
+  padding: 0px auto;
+}
+.input_group {
+  margin-bottom: 10px;
+  position: relative;
+  margin-top: 20px;
+  margin-left: 10px;
+}
+
+label {
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding-left: 10px;
+  padding-top: 10px;
+  color: rgb(25, 23, 23);
+  cursor: text;
+  transition: 0.2s;
+  font-size: 14px;
+}
+input:focus ~ label,
+input:valid ~ label,
+textarea:focus ~ label,
+textarea:valid ~ label {
+  top: -35px;
+  font-size: 13px;
+  padding-left: 0px;
+}
+
+.mobile_add_form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px 20px;
+}
+
+@media (min-width: 0px) and (max-width: 767px) {
+  .mobile_add_form {
+    width: 90%;
+    padding: 10px 0px;
+  }
+  .mobile_add_form {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px 10px;
+  }
+  .mobile_form_div {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+  }
+}
