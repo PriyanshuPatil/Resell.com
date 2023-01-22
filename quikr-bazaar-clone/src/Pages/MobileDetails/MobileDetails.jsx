@@ -5,8 +5,11 @@ import CarouselA from "../../Components/Carousel/Carousel";
 import Loading from "../../Components/Loading/Loading";
 import DescriptionCard from "./DescriptionCard";
 import DetailsTab from "../../Pages/MobileDetails/Components/DetailsTab";
+import { useLocation } from "react-router-dom";
 
 const MobileDetails = () => {
+  const location = useLocation();
+  console.log("hsjcj", location.state.id);
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
   const [similar, setSimilar] = useState([]);
@@ -19,7 +22,9 @@ const MobileDetails = () => {
   //
   useEffect(() => {
     axios
-      .get(`https://courageous-umbrella-moth.cyclic.app/mobile/1689146689`)
+      .get(
+        `https://courageous-umbrella-moth.cyclic.app/mobile/${location.state.id}`
+      )
       .then((res) => setData(res.data))
       .catch((err) => console.log(err));
     setTimeout(loadingTimer, 1500);

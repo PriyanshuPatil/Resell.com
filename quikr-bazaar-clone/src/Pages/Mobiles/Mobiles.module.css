@@ -31,7 +31,27 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 20px;
+  height: 50px;
+  margin-top: 10px;
+}
+.mobiles_data_sort_container > div:nth-child(1) > div:nth-child(1) {
+  /* border: 1px solid red; */
+  width: 50%;
+  display: flex;
+  align-items: center;
+}
+.sort_mobiles_select {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+.sort_mobiles_select > p {
+  font-size: small;
+}
+.sort_mobiles_select > select {
+  height: 30px;
 }
 .mobiles_data_container {
   /* border: 1px solid rgba(0, 255, 255, 0); */
