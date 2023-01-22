@@ -26,7 +26,9 @@ function Navbar() {
             style={{
               display: "flex",
               justifyContent: "space-between",
-              gap: "10px"
+              alignItems:'center',
+              gap: "50px",
+              padding:'0px 10px',
             }}
           >
             <div>
@@ -35,10 +37,11 @@ function Navbar() {
                 style={{
                   textDecoration: "none",
                   color: "black",
-                  display: "flex"
+                  display: "flex",
+                  alignItems:'center',
                 }}
               >
-                <MdOutlineBusinessCenter />
+                <MdOutlineBusinessCenter style={{color:'rgba(107, 105, 105, 0.904)'}} />
                 <p>For Bussinesses</p>
               </NavLink>
             </div>
@@ -48,19 +51,23 @@ function Navbar() {
                 style={{
                   textDecoration: "none",
                   color: "black",
-                  display: "flex"
+                  display: "flex",
+                  alignItems:'center',
                 }}
               >
-                <GoDesktopDownload />
+                <GoDesktopDownload style={{color:'rgba(107, 105, 105, 0.904)',marginRight:'4px'}} />
                 <p>Download The App</p>
               </NavLink>
             </div>
           </div>
+          
+            
           <div
             style={{
               display: "flex",
               justifyContent: "space-between",
-              gap: "10px"
+              alignItems:'center',
+              gap: "30px"
             }}
           >
             <div>
@@ -69,10 +76,11 @@ function Navbar() {
                 style={{
                   textDecoration: "none",
                   color: "black",
-                  display: "flex"
+                  display: "flex",
+                  alignItems:'center',
                 }}
               >
-                <MdLocalOffer />
+                <MdLocalOffer style={{color:'rgba(107, 105, 105, 0.904)',marginRight:'4px'}} />
                 <p>Deals</p>
               </NavLink>
             </div>
@@ -82,10 +90,11 @@ function Navbar() {
                 style={{
                   textDecoration: "none",
                   color: "black",
-                  display: "flex"
+                  display: "flex",
+                  alignItems:'center',
                 }}
               >
-                <FaStoreAlt />
+                <FaStoreAlt style={{color:'rgba(107, 105, 105, 0.904)',marginRight:'4px'}} />
                 <p>Visit our store</p>
               </NavLink>
             </div>
@@ -95,10 +104,12 @@ function Navbar() {
                 style={{
                   textDecoration: "none",
                   color: "black",
-                  display: "flex"
+                  display: "flex",
+                  alignItems:'center',
+                  paddingRight:'7px'
                 }}
               >
-                <FaStoreAlt />
+                <FaStoreAlt style={{color:'rgba(107, 105, 105, 0.904)',marginRight:'4px'}} />
                 <p>Chat</p>
               </NavLink>
             </div>
@@ -108,13 +119,6 @@ function Navbar() {
           {/* logo and hamburger */}
           <div className={Styles.logoBox}>
             <h1 className={Styles.hamburger}>
-              {/* <RxHamburgerMenu
-                style={{
-                  margin: "10px",
-                  padding: "0px",
-                  verticalAlign: "middle"
-                }}
-              /> */}
               <SideDrawer/>
             </h1>
             <NavLink to="/">
