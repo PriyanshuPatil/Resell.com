@@ -3,8 +3,11 @@ import axios from "axios";
 import mbls from "./Mobiles.module.css";
 import MobilesCard from "../../Components/MobilesCard/MobilesCard";
 import Filters from "../../Components/Filters/Filters";
+import { useLocation } from "react-router-dom";
 
 const Mobiles = () => {
+  const location = useLocation();
+  console.log(location.state);
   //   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
   //
@@ -14,7 +17,9 @@ const Mobiles = () => {
   //
   useEffect(() => {
     axios
-      .get(`https://courageous-umbrella-moth.cyclic.app/mobile`)
+      .get(
+        `https://courageous-umbrella-moth.cyclic.app/${location.state.keyword}`
+      )
       .then((res) => setData(res.data))
       .catch((err) => console.log(err));
     // setTimeout(loadingTimer, 1500);
@@ -25,21 +30,21 @@ const Mobiles = () => {
     if (e.target.value === "priceAsc") {
       let response = axios
         .get(
-          "https://courageous-umbrella-moth.cyclic.app/mobile?_sort=price.value.raw&order=asc"
+          `https://courageous-umbrella-moth.cyclic.app/${location.state.keyword}?_sort=price.value.raw&order=asc`
         )
         .then((res) => setData(res.data));
     }
     if (e.target.value === "priceDesc") {
       axios
         .get(
-          "https://courageous-umbrella-moth.cyclic.app/mobile?_sort=price.value.raw&_order=desc"
+          `https://courageous-umbrella-moth.cyclic.app/${location.state.keyword}?_sort=price.value.raw&_order=desc`
         )
         .then((res) => setData(res.data));
     }
     if (e.target.value === "popularityDesc") {
       axios
         .get(
-          "https://courageous-umbrella-moth.cyclic.app/mobile?_sort=score&_order=desc"
+          `https://courageous-umbrella-moth.cyclic.app/${location.state.keyword}?_sort=score&_order=desc`
         )
         .then((res) => setData(res.data));
     }
@@ -71,7 +76,7 @@ const Mobiles = () => {
           <div className={mbls.mobiles_data_container}>
             {data.length > 0 &&
               data.map((mobile) => (
-                <MobilesCard key={mobile.id} data={mobile} />
+                <MobilesCard key={mobile.id} data={mobile} query={location} />
               ))}
           </div>
         </div>

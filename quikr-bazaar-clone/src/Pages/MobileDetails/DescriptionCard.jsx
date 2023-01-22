@@ -2,8 +2,13 @@ import React from "react";
 import dscrp from "./Description.module.css";
 import { BsDot } from "react-icons/bs";
 import { RxDividerVertical } from "react-icons/rx";
+import { useNavigate } from "react-router-dom";
 
-const DescriptionCard = ({ desc }) => {
+const DescriptionCard = ({ desc, keyword }) => {
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate("/user_details", { state: { desc, keyword } });
+  };
   return (
     <div>
       <div className={dscrp.desc_heading_a}>
@@ -27,7 +32,7 @@ const DescriptionCard = ({ desc }) => {
       </div>
       {/*  */}
       <div className={dscrp.desc_buttons}>
-        <button>ADD TO CART</button>
+        <button onClick={() => handleClick()}>View User Details</button>
         <button>CHAT</button>
       </div>
       {/*  */}

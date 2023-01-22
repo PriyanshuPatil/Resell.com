@@ -4,7 +4,15 @@ import smctg from "./SimilarCategory.module.css";
 const SimilarCategory = () => {
   return (
     <>
-      <hr style={{ width: "65%", marginTop: "3rem", marginBottom: "3rem" }} />
+      <hr
+        style={{
+          width: "65%",
+          maxWidth: "1080px",
+          margin: "auto",
+          marginTop: "3rem",
+          marginBottom: "3rem",
+        }}
+      />
       <div className={smctg.SimilarCategory_main}>
         {/*  */}
         <div className={smctg.SimilarCategory_main_inner}>
