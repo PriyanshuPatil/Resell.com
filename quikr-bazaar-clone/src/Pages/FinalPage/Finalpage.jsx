@@ -1,3 +1,4 @@
+import { useToast } from "@chakra-ui/react";
 import React from "react";
 import { useState } from "react";
 import "./finalpage.css";
@@ -6,6 +7,10 @@ import Loading from "../../Components/Loading/Loading";
 import { useEffect } from "react";
 
 const Finalpage = () => {
+    let toast = useToast();
+  const handleSubmit = () => {
+      toast({position: 'top', description: 'Message Delivered Sucessfully' })
+    }
   const [loading, setLoading] = useState(true);
   const location = useLocation();
   console.log(location);
@@ -80,6 +85,10 @@ const Finalpage = () => {
             Send Message
           </button>
         </div>
+
+        <button onClick={handleSubmit} style={{fontSize:"15px", padding:"1rem", backgroundColor:"#00a62c", color:"#fff", borderRadius:"10px"}}>Send Message</button>
+
+
       </div>
     );
   } else {

@@ -1,8 +1,8 @@
-import logo from "./logo.svg";
 import "./App.css";
+import Footer from "./Components/Footer/Footer";
+import Underfooter from "./Components/Footer/Underfooter";
 import Navbar from "./Components/Navbar/Navbar";
-import { applyDarkTheme, applyLightTheme } from "./redux/theme/theme.actions";
-import { useDispatch, useSelector } from "react-redux";
+
 import AllRoutes from "./Routes/AllRoutes";
 
 function App() {
@@ -13,6 +13,8 @@ function App() {
       {/* {"Unit-5  =>  UNIT-6"} */}
       {/* ALL-ROUTES COMPONENT  */}
       <AllRoutes />
+      {/* <Footer />
+      <Underfooter /> */}
     </div>
   );
 }
