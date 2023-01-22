@@ -2,7 +2,7 @@
   /* border: 1px solid red; */
   display: flex;
   align-items: center;
-  margin-bottom: -2rem;
+  /* margin-bottom: -2rem; */
 }
 .desc_heading_a > h4:nth-child(1) {
   color: #47be4b;
@@ -16,13 +16,13 @@
   align-items: center;
   color: rgb(128, 128, 128);
   font-size: 0.9rem;
-  margin-top: -2rem;
+  /* margin-top: -2rem; */
 }
 .desc_price {
   /* border: 1px solid red; */
   color: #0083ca;
   font-size: 1rem;
-  margin-top: -1.5rem;
+  /* margin-top: -1.5rem; */
 }
 .desc_buttons {
   /* border: 1px solid red; */

@@ -9,7 +9,7 @@ import { useLocation } from "react-router-dom";
 
 const MobileDetails = () => {
   const location = useLocation();
-  console.log("hsjcj", location.state.id);
+  console.log("hsjcj", location.state.query.state.keyword);
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
   const [similar, setSimilar] = useState([]);
@@ -23,7 +23,7 @@ const MobileDetails = () => {
   useEffect(() => {
     axios
       .get(
-        `https://courageous-umbrella-moth.cyclic.app/mobile/${location.state.id}`
+        `https://courageous-umbrella-moth.cyclic.app/${location.state.query.state.keyword}/${location.state.id}`
       )
       .then((res) => setData(res.data))
       .catch((err) => console.log(err));
@@ -55,7 +55,10 @@ const MobileDetails = () => {
               />
             </div>
             <div className={mbdt.all_product_description}>
-              <DescriptionCard desc={data} />
+              <DescriptionCard
+                desc={data}
+                keyword={location.state.query.state.keyword}
+              />
             </div>
           </div>
         </div>

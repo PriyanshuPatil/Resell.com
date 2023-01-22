@@ -2,10 +2,11 @@ import React from "react";
 import mobCard from "./MobileCard.module.css";
 import { useNavigate } from "react-router-dom";
 
-const MobilesCard = ({ data }) => {
+const MobilesCard = ({ data, query }) => {
+  console.log("hsbdjbjb", query);
   const navigate = useNavigate();
   const handleClick = (id) => {
-    navigate("/product_details", { state: { id } });
+    navigate("/product_details", { state: { id, query } });
   };
   // console.log(data.images);
   //
