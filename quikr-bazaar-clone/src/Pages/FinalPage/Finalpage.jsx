@@ -2,14 +2,16 @@ import { useToast } from "@chakra-ui/react";
 import React from "react";
 import { useState } from "react";
 import "./finalpage.css";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Loading from "../../Components/Loading/Loading";
 import { useEffect } from "react";
 
 const Finalpage = () => {
     let toast = useToast();
+    const navigate=useNavigate()
   const handleSubmit = () => {
-      toast({position: 'top', description: 'Message Delivered Sucessfully' })
+      toast({position: 'top', description: 'Message Delivered Sucessfully' });
+      navigate("/")
     }
   const [loading, setLoading] = useState(true);
   const location = useLocation();
@@ -73,7 +75,7 @@ const Finalpage = () => {
               placeholder="send message directly to the seller from here and make him/her notify"
             ></textarea>
           </div>
-          <button
+          <button onClick={handleSubmit}
             style={{
               fontSize: "15px",
               padding: "1rem",
@@ -85,8 +87,6 @@ const Finalpage = () => {
             Send Message
           </button>
         </div>
-
-        <button onClick={handleSubmit} style={{fontSize:"15px", padding:"1rem", backgroundColor:"#00a62c", color:"#fff", borderRadius:"10px"}}>Send Message</button>
 
 
       </div>

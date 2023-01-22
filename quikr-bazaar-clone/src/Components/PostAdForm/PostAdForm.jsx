@@ -13,6 +13,7 @@ import {
 } from "@chakra-ui/react";
 import { useToast } from "@chakra-ui/react";
 import { postAdvertisements } from "../../redux/advertisements/advertisements.actions";
+import { useNavigate } from "react-router-dom";
 
 const PostAdForm = ({ Category }) => {
   const dispatch=useDispatch()
@@ -20,6 +21,7 @@ const PostAdForm = ({ Category }) => {
   const form = useRef();
   const [plan, setPlanID] = useState(0);
   const [file, setFile] = useState();
+  const navigate=useNavigate()
   const [formData, setFormData] = useState({
     brand_name: "",
     modal_name: "",
@@ -56,7 +58,7 @@ const PostAdForm = ({ Category }) => {
       title: "Image SuccesFully Added",
       description: "Now You can see image on Ui.",
       status: "success",
-      duration: 9000,
+      duration: 3000,
       position: "top",
       isClosable: true,
     });
@@ -71,10 +73,12 @@ const PostAdForm = ({ Category }) => {
       title: "Congratulations",
       description: "Your Ad has been live now on Resell site.",
       status: "success",
-      duration: 9000,
+      duration: 3000,
       position: "top",
       isClosable: true,
-    })};
+    }) ;
+    navigate("/")
+  };
   return (
     <div className={style.PostAddForm_container}>
       <div className={style.PostAddForm_heading}>

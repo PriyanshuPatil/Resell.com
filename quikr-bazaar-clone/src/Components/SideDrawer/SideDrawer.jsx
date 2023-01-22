@@ -160,7 +160,7 @@ function SideDrawer() {
                   color: "teal",
                 }}
               >
-                <Login />
+             <NavLink to="/login">Login</NavLink>   {/* <Login /> */}
               </Button>
 
               <Button

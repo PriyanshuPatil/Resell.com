@@ -166,7 +166,7 @@ function Navbar() {
               // marginRight: "9px"
             }}
           >
-            <div>
+            <div style={{paddingRight:"10px"}}>
               <h3 className={Styles.login_icon}>
                 <FaRegUserCircle
                   style={{ fontSize: "23px", fontWeight: "100" }}

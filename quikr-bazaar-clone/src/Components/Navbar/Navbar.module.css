@@ -1,6 +1,5 @@
 .NavbarHolder {
   width: 100%;
-  background-color: white;
   box-sizing: border-box;
   display: flex;
   justify-content: center;
@@ -31,6 +30,7 @@
   width: 100%;
   color: rgba(107, 105, 105, 0.904);
   background-color: white;
+  padding: 10px 0px;
   margin-top: 5px;
 }
 
@@ -40,6 +40,7 @@
   height: 50px;
   width: 98%;
   margin: auto;
+  padding: 35px 0px;
   display: flex;
   justify-content: space-between;
   align-items: center;
