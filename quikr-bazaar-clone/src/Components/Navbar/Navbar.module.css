@@ -1,6 +1,8 @@
 .NavbarHolder{
   height: 100px;
+  width: 100%;
   background-color:white;
+  box-sizing: border-box;
 }
 
 .mainNav {
@@ -23,9 +25,11 @@
 .upperNavbarIcons{
   display:flex;
   justify-content:space-between;
+  align-items: flex-start;
   width:100%;
-  color: red;
+  color:rgba(107, 105, 105, 0.904);
   background-color: white;
+  margin-top: 5px;
 }
 
   
@@ -47,11 +51,11 @@
   
   .logoBox {
     display: flex;
-    justify-content: left;
     align-items: center;
-    vertical-align:middle;
     width: 12%;
     font-size: 20px;
+    gap:10px;
+    text-align: center;
     /* border: 1px solid red; */
   }
   
@@ -63,9 +67,11 @@
   
   .hamburger {
     color: gray;
-    height: 40px;
+    height: 90%;
+    justify-content: center;
+    align-items: center;
     padding: 0px;
-    margin: 0px;
+    margin-top: 10px;
     /* border: 1px solid red; */
   }
   
@@ -111,19 +117,24 @@
   }
 
   .mega_menu{
+    margin: auto;
     margin-top: 100px;
     border-bottom: 1px solid rgba(167, 164, 164, 0.911);
     width:100%;
+    /* border: 1px solid red; */
+    box-sizing: border-box;
   }
 
   .links{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     text-decoration: none;
+    /* box-sizing: border-box; */
     color: black;
     width: 97%;
     margin: auto;
     position: relative;
+    /* border: 2px solid green; */
   }
 
   .links>li{
@@ -157,9 +168,11 @@
     color: black;
     padding: 8px 5px;
     box-sizing: border-box;
-    /* border: 1px solid red; */
+    /* border: 1px solid yellow; */
     display: flex;
     align-items: center;
+    margin: auto;
+
   }
   
   .links>li:hover .navLink_tabs{
