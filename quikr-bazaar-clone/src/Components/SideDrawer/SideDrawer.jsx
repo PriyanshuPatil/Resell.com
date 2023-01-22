@@ -24,50 +24,48 @@ import {
   MenuDivider,
 } from "@chakra-ui/react";
 
-import {ChevronDownIcon } from '@chakra-ui/icons';
+import { ChevronDownIcon } from "@chakra-ui/icons";
 import { RxHamburgerMenu } from "react-icons/rx";
-import {GiSofa} from 'react-icons/gi';
-import {AiOutlineHome} from 'react-icons/ai';
-import {GiWashingMachine} from 'react-icons/gi';
-import {HiOutlineUserGroup} from 'react-icons/hi';
-import { ImMobile } from 'react-icons/im';
-import {RiBearSmileFill} from 'react-icons/ri';
-import {CiMoneyCheck1} from 'react-icons/ci';
-import {MdLocalOffer} from 'react-icons/md';
-import {FiDownload} from 'react-icons/fi';
-import {CiLocationOn} from 'react-icons/ci';
-import {AiOutlineUser} from 'react-icons/ai';
-import {HiOutlineCurrencyRupee} from 'react-icons/hi';
-import {TbFileSpreadsheet} from 'react-icons/tb';
-import {FaTools} from 'react-icons/fa';
-import {GiHandBag} from 'react-icons/gi';
-import {FaCarSide} from 'react-icons/fa';
-import {RiMotorbikeFill} from 'react-icons/ri';
+import { GiSofa } from "react-icons/gi";
+import { AiOutlineHome } from "react-icons/ai";
+import { GiWashingMachine } from "react-icons/gi";
+import { HiOutlineUserGroup } from "react-icons/hi";
+import { ImMobile } from "react-icons/im";
+import { RiBearSmileFill } from "react-icons/ri";
+import { CiMoneyCheck1 } from "react-icons/ci";
+import { MdLocalOffer } from "react-icons/md";
+import { FiDownload } from "react-icons/fi";
+import { CiLocationOn } from "react-icons/ci";
+import { AiOutlineUser } from "react-icons/ai";
+import { HiOutlineCurrencyRupee } from "react-icons/hi";
+import { TbFileSpreadsheet } from "react-icons/tb";
+import { FaTools } from "react-icons/fa";
+import { GiHandBag } from "react-icons/gi";
+import { FaCarSide } from "react-icons/fa";
+import { RiMotorbikeFill } from "react-icons/ri";
 
-import Login from '../Login/Login';
-import Logo from '../../Assets/logo.png';
+import Login from "../../Pages/LoginB/Login";
+import Logo from "../../Assets/logo.png";
 
-
-
-const MenuCategories = () =>{
+const MenuCategories = () => {
   return (
     <>
       <Menu>
         <MenuButton
-          //  as={Button} 
-           rightIcon={<ChevronDownIcon />}
-           paddingTop="10px"
-           paddingBottom="10px"
-           borderRadius="0px"
-           bg="white"
-           display="flex"
-           justifyContent="left"
-           marginLeft="0px"
-           paddingLeft='0px'
-           _hover={{
-             background: "gray.50",
-             color: "teal"
-           }}
+          //  as={Button}
+          rightIcon={<ChevronDownIcon />}
+          paddingTop="10px"
+          paddingBottom="10px"
+          borderRadius="0px"
+          bg="white"
+          display="flex"
+          justifyContent="left"
+          marginLeft="0px"
+          paddingLeft="0px"
+          _hover={{
+            background: "gray.50",
+            color: "teal",
+          }}
         >
           more Categories
         </MenuButton>
@@ -102,11 +100,8 @@ const MenuCategories = () =>{
         </MenuList>
       </Menu>
     </>
-  )
-}
-
-
-
+  );
+};
 
 function SideDrawer() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -119,7 +114,7 @@ function SideDrawer() {
         // colorScheme="none"
         size={"xs"}
         p={0}
-        marginBottom='18px'
+        marginBottom="18px"
         onClick={onOpen}
       >
         <RxHamburgerMenu
@@ -142,12 +137,16 @@ function SideDrawer() {
         <DrawerContent>
           <DrawerCloseButton />
           <DrawerHeader>
-            <Image src='http://localhost:3000/static/media/logo.8b500399a5e81609e1a4.png' alt='logo' w={'40%'} height='40px' />
+            <Image
+              src="http://localhost:3000/static/media/logo.8b500399a5e81609e1a4.png"
+              alt="logo"
+              w={"40%"}
+              height="40px"
+            />
           </DrawerHeader>
 
           <DrawerBody>
             <VStack align="left">
-
               <Button
                 borderBottom="1px solid gray"
                 paddingTop="10px"
@@ -158,7 +157,7 @@ function SideDrawer() {
                 bg="white"
                 _hover={{
                   background: "gray.50",
-                  color: "teal"
+                  color: "teal",
                 }}
               >
                 <Login />
@@ -174,11 +173,15 @@ function SideDrawer() {
                 marginLeft="0px"
                 _hover={{
                   background: "gray.50",
-                  color: "teal"
+                  color: "teal",
                 }}
               >
-                <NavLink to='/my-account' style={{textDecoration:"none",color:'gray'}}> 
-                  <AiOutlineUser />My Account
+                <NavLink
+                  to="/my-account"
+                  style={{ textDecoration: "none", color: "gray" }}
+                >
+                  <AiOutlineUser />
+                  My Account
                 </NavLink>
               </Button>
 
@@ -190,11 +193,14 @@ function SideDrawer() {
                 bg="white"
                 _hover={{
                   background: "gray.50",
-                  color: "teal"
+                  color: "teal",
                 }}
               >
-                <NavLink to='/orders-payments' style={{textDecoration:"none",color:'gray'}}> 
-                  <HiOutlineCurrencyRupee/> Orders & Payments
+                <NavLink
+                  to="/orders-payments"
+                  style={{ textDecoration: "none", color: "gray" }}
+                >
+                  <HiOutlineCurrencyRupee /> Orders & Payments
                 </NavLink>
               </Button>
 
@@ -207,11 +213,15 @@ function SideDrawer() {
                 bg="white"
                 _hover={{
                   background: "gray.50",
-                  color: "teal"
+                  color: "teal",
                 }}
               >
-                <NavLink to='/my-ads' style={{textDecoration:"none",color:'gray'}}> 
-                 <TbFileSpreadsheet/>My Ads
+                <NavLink
+                  to="/my-ads"
+                  style={{ textDecoration: "none", color: "gray" }}
+                >
+                  <TbFileSpreadsheet />
+                  My Ads
                 </NavLink>
               </Button>
 
@@ -219,10 +229,10 @@ function SideDrawer() {
                 disabled={true}
                 bg="white"
                 justifyContent="left"
-                cursor='default'
-                color='gray'
+                cursor="default"
+                color="gray"
                 _hover={{
-                  background: "white"
+                  background: "white",
                 }}
               >
                 Categories
@@ -236,11 +246,15 @@ function SideDrawer() {
                 bg="white"
                 _hover={{
                   background: "gray.50",
-                  color: "teal"
+                  color: "teal",
                 }}
               >
-                <NavLink to='/services'  style={{textDecoration:"none",color:'gray'}}>
-                 <FaTools />Services
+                <NavLink
+                  to="/services"
+                  style={{ textDecoration: "none", color: "gray" }}
+                >
+                  <FaTools />
+                  Services
                 </NavLink>
               </Button>
 
@@ -252,11 +266,15 @@ function SideDrawer() {
                 bg="white"
                 _hover={{
                   background: "gray.50",
-                  color: "teal"
+                  color: "teal",
                 }}
               >
-                <NavLink to='/jobs' style={{textDecoration:"none",color:'gray'}}>
-                  <GiHandBag />Jobs
+                <NavLink
+                  to="/jobs"
+                  style={{ textDecoration: "none", color: "gray" }}
+                >
+                  <GiHandBag />
+                  Jobs
                 </NavLink>
               </Button>
 
@@ -268,11 +286,15 @@ function SideDrawer() {
                 bg="white"
                 _hover={{
                   background: "gray.50",
-                  color: "teal"
+                  color: "teal",
                 }}
               >
-                <NavLink to='/cars' style={{textDecoration:"none",color:'gray'}}>
-                  <FaCarSide />Cars
+                <NavLink
+                  to="/cars"
+                  style={{ textDecoration: "none", color: "gray" }}
+                >
+                  <FaCarSide />
+                  Cars
                 </NavLink>
               </Button>
 
@@ -284,11 +306,15 @@ function SideDrawer() {
                 bg="white"
                 _hover={{
                   background: "gray.50",
-                  color: "teal"
+                  color: "teal",
                 }}
               >
-                <NavLink to='/bikes' style={{textDecoration:"none",color:'gray'}}>
-                  <RiMotorbikeFill />Bikes
+                <NavLink
+                  to="/bikes"
+                  style={{ textDecoration: "none", color: "gray" }}
+                >
+                  <RiMotorbikeFill />
+                  Bikes
                 </NavLink>
               </Button>
 
@@ -300,11 +326,14 @@ function SideDrawer() {
                 bg="white"
                 _hover={{
                   background: "gray.50",
-                  color: "teal"
+                  color: "teal",
                 }}
               >
-                <NavLink to='/furniture-decor' style={{textDecoration:"none",color:'gray'}}> 
-                <GiSofa /> Furniture & Decor
+                <NavLink
+                  to="/furniture-decor"
+                  style={{ textDecoration: "none", color: "gray" }}
+                >
+                  <GiSofa /> Furniture & Decor
                 </NavLink>
               </Button>
 
@@ -316,11 +345,14 @@ function SideDrawer() {
                 bg="white"
                 _hover={{
                   background: "gray.50",
-                  color: "teal"
+                  color: "teal",
                 }}
               >
-                <NavLink to='/electronics-appliances' style={{textDecoration:"none",color:'gray'}}> 
-                 <GiWashingMachine/> Electronics & Appliances
+                <NavLink
+                  to="/electronics-appliances"
+                  style={{ textDecoration: "none", color: "gray" }}
+                >
+                  <GiWashingMachine /> Electronics & Appliances
                 </NavLink>
               </Button>
 
@@ -332,11 +364,14 @@ function SideDrawer() {
                 bg="white"
                 _hover={{
                   background: "gray.50",
-                  color: "teal"
+                  color: "teal",
                 }}
               >
-                <NavLink to='/homes' style={{textDecoration:"none",color:'gray'}}>
-                <AiOutlineHome />  Homes
+                <NavLink
+                  to="/homes"
+                  style={{ textDecoration: "none", color: "gray" }}
+                >
+                  <AiOutlineHome /> Homes
                 </NavLink>
               </Button>
 
@@ -348,11 +383,14 @@ function SideDrawer() {
                 bg="white"
                 _hover={{
                   background: "gray.50",
-                  color: "teal"
+                  color: "teal",
                 }}
               >
-                <NavLink to='/co-working-spaces' style={{textDecoration:"none",color:'gray'}}>
-                <HiOutlineUserGroup/> Co-Working Spaces
+                <NavLink
+                  to="/co-working-spaces"
+                  style={{ textDecoration: "none", color: "gray" }}
+                >
+                  <HiOutlineUserGroup /> Co-Working Spaces
                 </NavLink>
               </Button>
 
@@ -364,11 +402,14 @@ function SideDrawer() {
                 bg="white"
                 _hover={{
                   background: "gray.50",
-                  color: "teal"
+                  color: "teal",
                 }}
               >
-                <NavLink to='/mobiles-tablets' style={{textDecoration:"none",color:'gray'}}> 
-                <ImMobile /> Mobiles & Tablets
+                <NavLink
+                  to="/mobiles-tablets"
+                  style={{ textDecoration: "none", color: "gray" }}
+                >
+                  <ImMobile /> Mobiles & Tablets
                 </NavLink>
               </Button>
 
@@ -380,11 +421,14 @@ function SideDrawer() {
                 bg="white"
                 _hover={{
                   background: "gray.50",
-                  color: "teal"
+                  color: "teal",
                 }}
               >
-                <NavLink to='/kids-toys' style={{textDecoration:"none",color:'gray'}}> 
-                <RiBearSmileFill/> Kids & Toys
+                <NavLink
+                  to="/kids-toys"
+                  style={{ textDecoration: "none", color: "gray" }}
+                >
+                  <RiBearSmileFill /> Kids & Toys
                 </NavLink>
               </Button>
 
@@ -396,7 +440,7 @@ function SideDrawer() {
                 bg="white"
                 _hover={{
                   background: "gray.50",
-                  color: "teal"
+                  color: "teal",
                 }}
               >
                 <MenuCategories />
@@ -406,13 +450,12 @@ function SideDrawer() {
                 disabled={true}
                 bg="white"
                 justifyContent="left"
-                cursor='default'
-                borderRadius='none'
-                borderBottom='1px solid gray'
-                color='gray'
+                cursor="default"
+                borderRadius="none"
+                borderBottom="1px solid gray"
+                color="gray"
                 _hover={{
-                  background: "white"
-                  
+                  background: "white",
                 }}
               >
                 OTHERS
@@ -426,11 +469,14 @@ function SideDrawer() {
                 bg="white"
                 _hover={{
                   background: "gray.50",
-                  color: "teal"
+                  color: "teal",
                 }}
               >
-                <NavLink to='/for-businesses' style={{textDecoration:"none",color:'gray'}}> 
-                <CiMoneyCheck1/> For Businesses
+                <NavLink
+                  to="/for-businesses"
+                  style={{ textDecoration: "none", color: "gray" }}
+                >
+                  <CiMoneyCheck1 /> For Businesses
                 </NavLink>
               </Button>
 
@@ -442,11 +488,15 @@ function SideDrawer() {
                 bg="white"
                 _hover={{
                   background: "gray.50",
-                  color: "teal"
+                  color: "teal",
                 }}
               >
-                <NavLink to='/deals-offers' style={{textDecoration:"none",color:'gray'}}  >
-                  <MdLocalOffer/>Deals & Offers
+                <NavLink
+                  to="/deals-offers"
+                  style={{ textDecoration: "none", color: "gray" }}
+                >
+                  <MdLocalOffer />
+                  Deals & Offers
                 </NavLink>
               </Button>
 
@@ -455,14 +505,14 @@ function SideDrawer() {
                 paddingBottom="10px"
                 borderRadius="0px"
                 justifyContent="left"
-                color='gray'
+                color="gray"
                 bg="white"
                 _hover={{
                   background: "gray.50",
-                  color: "teal"
+                  color: "teal",
                 }}
               >
-               <CiLocationOn/> All India
+                <CiLocationOn /> All India
               </Button>
 
               <Button
@@ -471,15 +521,15 @@ function SideDrawer() {
                 borderRadius="0px"
                 justifyContent="left"
                 bg="white"
-                color='gray'
+                color="gray"
                 _hover={{
                   background: "gray.50",
-                  color: "teal"
+                  color: "teal",
                 }}
               >
-                <FiDownload/>Download Apps
+                <FiDownload />
+                Download Apps
               </Button>
-
             </VStack>
           </DrawerBody>
         </DrawerContent>
@@ -489,4 +539,3 @@ function SideDrawer() {
 }
 
 export default SideDrawer;
-
