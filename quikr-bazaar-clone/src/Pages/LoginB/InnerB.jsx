@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { HiCurrencyRupee } from "react-icons/hi";
 import { useDispatch } from "react-redux";
 import { login } from "../../redux/auth/auth.actions";
-import { useToast } from "@chakra-ui/react"
+import { useToast } from "@chakra-ui/react";
 
 const InnerB = () => {
   let navigate = useNavigate();
@@ -11,49 +11,58 @@ const InnerB = () => {
   const [loginCreds, setLoginCreds] = useState({});
 
   let dispatch = useDispatch();
-  const toast = useToast()
+  const toast = useToast();
 
   const handleChange = (e) => {
-    const {name, value} = e.target
+    const { name, value } = e.target;
     setLoginCreds({
       ...loginCreds,
       [name]: value,
-    })
+    });
 
-    console.log(loginCreds)
-  }
+    console.log(loginCreds);
+  };
 
   const handleLogin = (e) => {
     e.preventDefault();
-    dispatch(login(loginCreds)).then(() => {
-      toast({
-        title: "Login Successful",
-        description: "...redirecting",
-        status: "success",
-        duration: 4000,
-        isClosable: true,
-      });
-    }).then(() => navigate("/"))
-  }
-
+    dispatch(login(loginCreds))
+      .then(() => {
+        toast({
+          title: "Login Successful",
+          description: "...redirecting",
+          status: "success",
+          duration: 4000,
+          isClosable: true,
+        });
+      })
+      .then(() => navigate("/"));
+  };
 
   return (
     <>
       {/*  */}
-      <div style={{ lineHeight: "1.2rem" }}>
-        <h2 style={{ fontSize: "medium", marginBottom: "-10px" }}>
-          Login/Sign Up On Resell
-        </h2>
-        <p style={{ fontSize: "x-small", color: "grey" }}>
+      <div>
+        <h2 style={{ fontSize: "medium" }}>Login/Sign Up On Resell</h2>
+        <p style={{ fontSize: "x-small", color: "grey", marginBottom: "1rem" }}>
           Please provide your Mobile Number or Email to Login/Sign Up on Resell
         </p>
       </div>
       {/*  */}
       <form action="">
         {/* <label htmlFor="">Email</label> */}
-        <input onChange={handleChange} name="email" type="email" placeholder="Enter your email" />
+        <input
+          onChange={handleChange}
+          name="email"
+          type="email"
+          placeholder="Enter your email"
+        />
         {/* <label htmlFor="">Password</label> */}
-        <input onChange={handleChange} name="password" type="password" placeholder="Enter your password" />
+        <input
+          onChange={handleChange}
+          name="password"
+          type="password"
+          placeholder="Enter your password"
+        />
         <input
           onClick={handleLogin}
           type="button"
@@ -98,7 +107,6 @@ const InnerB = () => {
           style={{
             display: "flex",
             flexDirection: "column",
-            lineHeight: "0%",
           }}
         >
           <div
@@ -121,7 +129,6 @@ const InnerB = () => {
           <p
             style={{
               fontSize: "small",
-              marginTop: "-0.0001px",
             }}
           >
             All you need to do is login or sign up
@@ -137,7 +144,15 @@ const InnerB = () => {
           gap: "10px",
         }}
       >
-        <p style={{ fontSize: "small" }}>LOGIN USING</p>
+        <p
+          style={{
+            fontSize: "x-small",
+            marginTop: "1rem",
+            marginBottom: "1rem",
+          }}
+        >
+          LOGIN USING
+        </p>
       </div>
       {/*  */}
       <div
@@ -150,7 +165,7 @@ const InnerB = () => {
       >
         <div
           style={{
-            width: "30%",
+            width: "40%",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -158,6 +173,7 @@ const InnerB = () => {
             cursor: "pointer",
             backgroundColor: "aliceblue",
             borderRadius: "10px",
+            padding: "0.5rem 0",
           }}
         >
           <img
@@ -169,7 +185,7 @@ const InnerB = () => {
         </div>
         <div
           style={{
-            width: "30%",
+            width: "40%",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -177,6 +193,7 @@ const InnerB = () => {
             cursor: "pointer",
             backgroundColor: "aliceblue",
             borderRadius: "10px",
+            padding: "0.5rem 0",
           }}
         >
           <img
