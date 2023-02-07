@@ -1,5 +1,7 @@
 # quikr-bazaar
 
+Project Link: https://resellvalue.netlify.app/
+
 https://www.quikr.com/bazaar
 Member-1 :- fw20_1043-Priyanshu Patil
 Member-2 :- fw20_0507-Rishu Jha
