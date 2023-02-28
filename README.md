@@ -1,13 +1,8 @@
 # quikr-bazaar
+</br>
+Resell Is a Complete Clone Of Quikr Bazaar. It is  is an online platform in India that offers a wide range of new and used products for sale, including electronics, furniture, appliances, and more. The platform allows buyers and sellers to connect and negotiate deals directly, making it a convenient and cost-effective way to buy and sell goods.
 
-Project Link: https://resellvalue.netlify.app/
+</br>
 
-https://www.quikr.com/bazaar
-Member-1 :- fw20_1043-Priyanshu Patil
-Member-2 :- fw20_0507-Rishu Jha
-Member-3 :- fw19_0566-Abhishek Jha
-Member-4 :- fw20_0489-Arnab Das
-Member-5 :- fw21_0633-Harikesh Kumar
-
-Ia :- om.prakash@masaischool.com
-Group Lead:- fw20_1043-Priyanshu Patil
+# Deploy Link
+<a>https://resellvalue.netlify.app/</a>
