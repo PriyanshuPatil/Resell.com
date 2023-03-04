@@ -1,0 +1,22 @@
+{
+  "name": "resell-backend",
+  "version": "1.0.0",
+  "description": "</br>\r Resell Is a Complete Clone Of Quikr Bazaar. It is  is an online platform in India that offers a wide range of new and used products for sale, including electronics, furniture, appliances, and more. The platform allows buyers and sellers to connect and negotiate deals directly, making it a convenient and cost-effective way to buy and sell goods.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^7.0.0",
+    "nodemon": "^2.0.21"
+  }
+}
