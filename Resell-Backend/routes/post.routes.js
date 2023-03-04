@@ -6,7 +6,7 @@ const { Authenticator } = require("../middleware/authentication.middleware");
 const postRouter = express.Router();
 
 // /post -- GET/user ==> To get post data.
-postRouter.get("/",Authenticator, getPost);
+postRouter.get("/", getPost);
 
 // /post/:id -- GET/user ==> To get single post data.
 

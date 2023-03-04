@@ -13,6 +13,7 @@ app.use("/postad",postRouter)
 
 app.get("/", (req, res) => {
     res.send("Home-Page");
+    
   });
 
 app.listen(process.env.port,async()=>{
