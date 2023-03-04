@@ -2,7 +2,7 @@ import Styles from "./Navbar.module.css";
 import Logo from "../../Assets/logo.png";
 import { RxHamburgerMenu } from "react-icons/rx";
 import Search from "../SearchBar/Search";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { FaRegUserCircle } from "react-icons/fa";
 import { MdOutlineBusinessCenter } from "react-icons/md";
 import { GoDesktopDownload } from "react-icons/go";
@@ -13,14 +13,23 @@ import SideDrawer from "../SideDrawer/SideDrawer";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { logout } from "../../redux/auth/auth.actions";
+import { useToast } from "@chakra-ui/react";
 
 function Navbar() {
-  const { isLoggedIn } = useSelector((store) => store.Auth);
+  const { isAuth } = useSelector((store) => store.Auth);
   const dispatch = useDispatch();
+  const toast = useToast();
   const logoutHandler = () => {
     dispatch(logout());
+    toast({
+      title: "Logout Successfully!!",
+      description: "You have successfully Logout.",
+      status: "success",
+      duration: 4000,
+      isClosable: true,
+    });
   };
-
+ 
   return (
     <div className={Styles.NavbarHolder}>
       {/* upper icons */}
@@ -166,16 +175,26 @@ function Navbar() {
               // marginRight: "9px"
             }}
           >
-            <div style={{paddingRight:"10px"}}>
+            <div style={{ paddingRight: "10px" }}>
               <h3 className={Styles.login_icon}>
                 <FaRegUserCircle
-                  style={{ fontSize: "23px", fontWeight: "100" }}
+                  style={{ fontSize: "23px", fontWeight: "100" }}  
                 />
+                {!isAuth && 
                 <NavLink to="/login">
-                  <h5 onClick={isLoggedIn && logoutHandler}>
-                    {isLoggedIn ? "Logout" : "Login"}
-                  </h5>
-                </NavLink>
+                <h5 >
+                  {isAuth ? "Logout" : "Login/Signup"}
+                </h5>
+              </NavLink>
+                }
+                {isAuth && 
+               
+                <h5 >
+                 <div onClick={()=>{logoutHandler()}}>{isAuth ? "Logout" : "Login/Signup"}</div> 
+                </h5>
+           
+                }
+              
               </h3>
             </div>
             <NavLink to="/postad">

@@ -5,6 +5,7 @@
 import axios from "axios";
 
 export const loginAPI = async (creds) => {
-  let response = await axios.post("https://reqres.in/api/login", creds);
+  let response = await axios.post("https://smiling-ray-trench-coat.cyclic.app/users/login", creds);
   return response.data;
 };
+

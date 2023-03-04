@@ -2,73 +2,61 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { HiCurrencyRupee } from "react-icons/hi";
 import { useDispatch, useSelector } from "react-redux";
-import { login ,logout} from "../../redux/auth/auth.actions";
+import { login ,logout, registerUser} from "../../redux/auth/auth.actions";
 import { Button, useToast } from "@chakra-ui/react";
+
 
 const InnerB = () => {
   let navigate = useNavigate();
   const { loading, error, token,isAuth } = useSelector(
     (state) => state.Auth
   );
-  const [loginCreds, setLoginCreds] = useState({});
+  const [signCreds, setSignCreds] = useState({});
 
   let dispatch = useDispatch();
   const toast = useToast();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setLoginCreds({
-      ...loginCreds,
+    setSignCreds({
+      ...signCreds,
       [name]: value,
     });
 
-    console.log(loginCreds);
   };
 
-  const handleLogin =async () => {
-    await dispatch(logout());
+  const handleSignup =async () => {
+    if (signCreds.email && signCreds.password && signCreds.mobile && signCreds.name ) {
       try {
-        if (loginCreds.email && loginCreds.password) {
-          
-          await dispatch(login({ email:loginCreds.email, password: loginCreds.password }));
-          console.log(isAuth?"true":"false")
-          if ( isAuth) {
+        
+          await dispatch(registerUser({ email:signCreds.email, password: signCreds.password,phone_number:signCreds.mobile,name:signCreds.name}));
             toast({
               title: "Congratulations!!",
-              description: "You have successfully logged in.",
+              description: "You have successfully sign in.",
               status: "success",
               duration: 4000,
               isClosable: true,
             });
-            navigate("/")
-          } else {
-            toast({
-              title: "Oops!",
-              description: "Provide the correct credentials",
-              status: "error",
-              duration: 4000,
-              isClosable: true,
-            });
-            dispatch(logout())
             navigate("/login")
-          }
-        } else {
-          toast({
-            title: "Fields are empty",
-            description: "Kindly Provide email and password",
-            status: "error",
-            duration: 4000,
-            isClosable: true,
-          });
-        }
-      } catch (err) {
+          
+        }catch (err) {
         toast({
           title: "Oops!",
-          description: "Provide the correct credentials",
+          description: "User Allready Registered",
           status: "error",
           duration: 4000,
           isClosable: true,
         });
+      }} else {
+        toast({
+          title: "Oops!",
+          description: "Provide the All credentials",
+          status: "error",
+          duration: 4000,
+          isClosable: true,
+        });
+        dispatch(logout())
+        navigate("/register")
       }
 
     
@@ -81,9 +69,9 @@ const InnerB = () => {
     <>
       {/*  */}
       <div>
-        <h2 style={{ fontSize: "medium" }}>Login/Sign Up On Resell</h2>
+        <h2 style={{ fontSize: "medium" }}>Sign Up On Resell</h2>
         <p style={{ fontSize: "x-small", color: "grey", marginBottom: "1rem" }}>
-          Please provide your Mobile Number or Email to Login/Sign Up on Resell
+          Please provide your Mobile Number or Email to Sign Up on Resell
         </p>
       </div>
       {/*  */}
@@ -103,7 +91,19 @@ const InnerB = () => {
           placeholder="Enter your password" required={true}
         />
         <input
-          onClick={handleLogin}
+          onChange={handleChange}
+          name="mobile"
+          type="mobile"
+          placeholder="Enter your mobile Number" required={true}
+        />
+        <input
+          onChange={handleChange}
+          name="name"
+          type="name"
+          placeholder="name" required={true}
+        />
+        <input
+          onClick={handleSignup}
           type="button"
           value="Continue"
           style={{
@@ -113,7 +113,9 @@ const InnerB = () => {
             color: "white",
             cursor: "pointer",
           }}
+          
         />
+        
       </form>
       {/*  */}
       <p
@@ -170,7 +172,7 @@ const InnerB = () => {
               fontSize: "small",
             }}
           >
-            All you need to do is login or sign up
+            All you need to do is login 
           </p>
         </div>
       </div>
@@ -183,14 +185,14 @@ const InnerB = () => {
           gap: "10px",
         }}
       >
-        <Button onClick={()=>{navigate("/register")}}
+        <Button onClick={()=>{navigate("/login")}}
           style={{
             fontSize: "14px",
             marginTop: "1rem",
             marginBottom: "1rem",
           }}
         >
-          SignUp
+          Login
         </Button>
       </div>
       {/*  */}

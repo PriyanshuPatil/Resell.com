@@ -1,21 +1,48 @@
+import * as types from "./auth.types";
+import axios from "axios";
 
-import { loginAPI } from "./auth.api";
-import { AUTH_LOGIN_ERROR, AUTH_LOGIN_LOADING, AUTH_LOGIN_SUCCESS, AUTH_LOGOUT } from "./auth.types";
-
-
-// Login Actions
-export const login = (creds) => async (dispatch) => {
-  dispatch({ type: AUTH_LOGIN_LOADING });
-  try {
-    let data = await loginAPI(creds); // passing the creds from the props
-    dispatch({ type: AUTH_LOGIN_SUCCESS, payload: data})
-  } catch (error) {
-    dispatch({ type: AUTH_LOGIN_ERROR})
-  }
+export const getUser = () => (dispatch) => {
+  dispatch({ type: types.GET_USERS_LOADING });
+  axios
+    .get(`https://smiling-ray-trench-coat.cyclic.app/users`)
+    .then((res) => {
+      dispatch({ type: types.GET_USERS_SUCCESS, payload: res.data });
+    })
+    .catch((err) => {
+      console.log(err);
+      dispatch({ type: types.GET_USERS_ERROR });
+    });
 };
 
-//Logout Actions
+export const login = (cred) => (dispatch) => {
+  dispatch({ type: types.LOGIN_USERS_LOADING });
+  axios
+    .post(`https://smiling-ray-trench-coat.cyclic.app/users/login`, cred)
+    .then((res) => {
+      localStorage.setItem("token", res.data.token);
+      dispatch({ type: types.LOGIN_USERS_SUCCESS, payload: res.data.token });
+    })
+    .catch((err) => {
+      console.log(err);
+      dispatch({ type: types.LOGIN_USERS_ERROR });
+      return Promise.reject(err);
+    });
+};
 
 export const logout = () => (dispatch) => {
-    dispatch({type: AUTH_LOGOUT})
-}
+  dispatch({ type: types.LOGOUT_USERS_SUCCESS });
+};
+
+export const registerUser = (cred) => (dispatch) => {
+  dispatch({ type: types.REGISTER_USERS_LOADING });
+  axios
+    .post(`https://smiling-ray-trench-coat.cyclic.app/users/register`, cred)
+    .then((res) => {
+      dispatch({ type: types.REGISTER_USERS_SUCCESS });
+    })
+    .catch((err) => {
+      console.log(err);
+      dispatch({ type: types.REGISTER_USERS_ERROR });
+      return Promise.reject(err);
+    });
+};

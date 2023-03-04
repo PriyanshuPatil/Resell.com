@@ -8,6 +8,7 @@ import Login from "../Pages/LoginB/Login";
 import Home from "../Pages/HomeBB/Home";
 import { Carddata, HomeData } from "../Components/CardData/CardData";
 import Finalpage from "../Pages/FinalPage/Finalpage";
+import Signup from "../Pages/SignupB/Signup";
 
 const AllRoutes = () => {
   return (
@@ -17,6 +18,7 @@ const AllRoutes = () => {
       <Route path="/product_details" element={<MobileDetails />} />
       <Route path="/postad" element={<PostAd />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Signup/>} />
       <Route path="/user_details" element={<Finalpage />} />
     </Routes>
   );

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "react-tabs/style/react-tabs.css";
+// import "react-tabs/style/react-tabs.css";
 import AdDetails from "./AdDetails";
 import Guidelines from "./Buyer Guidelines/Guidelines";
 import DescriptionDetails from "./DescriptionDetails";
