@@ -5,10 +5,15 @@ import "./finalpage.css";
 import { useLocation, useNavigate } from "react-router-dom";
 import Loading from "../../Components/Loading/Loading";
 import { useEffect } from "react";
+import { useSelector } from "react-redux";
 
 const Finalpage = () => {
     let toast = useToast();
     const navigate=useNavigate()
+    const {  error, token,isAuth } = useSelector(
+      (state) => state.Auth
+    );
+  
   const handleSubmit = () => {
       toast({position: 'top', description: 'Message Delivered Sucessfully' });
       navigate("/")
@@ -16,6 +21,7 @@ const Finalpage = () => {
   const [loading, setLoading] = useState(true);
   const location = useLocation();
   console.log(location);
+
   const [blur, setBlur] = useState(true);
   const handleBlur = () => {
     setBlur(!blur);
@@ -26,7 +32,16 @@ const Finalpage = () => {
   useEffect(() => {
     setTimeout(loadingTimer, 200);
   }, []);
-
+if(!isAuth){
+  toast({
+    title: "Plz Login First",
+    description: "plz try to login first",
+    status: "error",
+    duration: 4000,
+    isClosable: true,
+  });
+  navigate("/login")
+}
   if (!loading) {
     return (
       <div className="prod-deets-main-container">

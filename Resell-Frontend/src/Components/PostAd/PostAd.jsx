@@ -11,6 +11,9 @@ import { VscTools } from "react-icons/vsc";
 import selectadd from "../../Assets/Select_Add_Image.png";
 import PostAdForm from "../PostAdForm/PostAdForm";
 import style from "./PostAd.module.css";
+import { useSelector } from "react-redux";
+import { useToast } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 const Category_List = [
   { id: 1, title: "Cars & Bikes", icon: <FaCarSide size={40} /> },
   { id: 2, title: "Mobiles & Tablets", icon: <ImMobile size={40} /> },
@@ -28,6 +31,21 @@ const Category_List = [
 ];
 
 const PostAd = () => {
+  const {  error, token,isAuth } = useSelector(
+    (state) => state.Auth
+  );
+  let toast = useToast();
+  const navigate=useNavigate()
+  if(!isAuth){
+    toast({
+      title: "Plz Login First",
+      description: "plz try to login first",
+      status: "error",
+      duration: 4000,
+      isClosable: true,
+    });
+    navigate("/login")
+  }
   const [activeCategory, setCategory] = useState(0);
   const [activeCategoryName, setCategoryName] = useState("");
   return (

@@ -5,7 +5,6 @@ import MobileDetails from "../Pages/MobileDetails/MobileDetails";
 import PostAdForm from "../Components/PostAdForm/PostAdForm";
 import PostAd from "../Components/PostAd/PostAd";
 import Login from "../Pages/LoginB/Login";
-import { Carddata, HomeData } from "../Components/CardData/CardData";
 import Finalpage from "../Pages/FinalPage/Finalpage";
 import Signup from "../Pages/SignupB/Signup";
 import HomePage from "../Pages/Home/HomePage";

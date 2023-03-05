@@ -16,6 +16,9 @@ import { postAdvertisements } from "../../redux/advertisements/advertisements.ac
 import { useNavigate } from "react-router-dom";
 
 const PostAdForm = ({ Category }) => {
+  const {  error, token,isAuth } = useSelector(
+    (state) => state.Auth
+  );
   const dispatch=useDispatch()
   const toast = useToast();
   const form = useRef();
@@ -68,17 +71,42 @@ const PostAdForm = ({ Category }) => {
 
  
   const SubmitAd = () =>{
-    dispatch(postAdvertisements(formData))  ;
-    toast({
-      title: "Congratulations",
-      description: "Your Ad has been live now on Resell site.",
-      status: "success",
-      duration: 3000,
-      position: "top",
-      isClosable: true,
-    }) ;
-    navigate("/")
+    if (formData.ad_tital && formData.brand_name && formData.email_id && formData.mobile_number && formData.modal_name && formData.physical_condition && formData.pincode && formData.price && formData.year_purchase && formData.you_are) {
+           dispatch(postAdvertisements(formData))  ;
+    
+        toast({
+          title: "Congratulations",
+          description: "Your Ad has been live now on Resell site.",
+          status: "success",
+          duration: 3000,
+          position: "top",
+          isClosable: true,
+        }) ;
+        navigate("/")
+      
+    } else {
+      toast({
+        title: "Fields are empty",
+        description: "Kindly Provide All Credential",
+        status: "error",
+        duration: 4000,
+        isClosable: true,
+      });
+    }
+   
+   
   };
+
+  if(!isAuth){
+    toast({
+      title: "Plz Login First",
+      description: "plz try to login first",
+      status: "error",
+      duration: 4000,
+      isClosable: true,
+    });
+    navigate("/login")
+  }
   return (
     <div className={style.PostAddForm_container}>
       <div className={style.PostAddForm_heading}>

@@ -40,7 +40,7 @@ const InnerB = () => {
               duration: 4000,
               isClosable: true,
             });
-            navigate("/")
+            navigate("/all_products", { state: { searchCategory:"", keyword:"mobile" } })
           } else {
             toast({
               title: "Oops!",
