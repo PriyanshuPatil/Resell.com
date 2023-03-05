@@ -13,8 +13,8 @@ function App() {
       {/* {"Unit-5  =>  UNIT-6"} */}
       {/* ALL-ROUTES COMPONENT  */}
       <AllRoutes />
-       {/* <Footer /> */}
-      {/* <Underfooter />  */}
+       <Footer />
+      <Underfooter /> 
     </div>
   );
 }

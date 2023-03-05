@@ -29,7 +29,7 @@ function Navbar() {
       isClosable: true,
     });
   };
- 
+
   return (
     <div className={Styles.NavbarHolder}>
       {/* upper icons */}
@@ -151,7 +151,7 @@ function Navbar() {
             </div>
           </div>
         </div>
-        <div className={Styles.Navbar}>
+        <div className={Styles.Navbar}  >
           {/* logo and hamburger */}
           <div className={Styles.logoBox}>
             <h1 className={Styles.hamburger}>
@@ -168,8 +168,13 @@ function Navbar() {
 
           <div
             style={{
-              display: "flex",
-              gap: "4px",
+              display: "grid",
+              gap: "4px",gridTemplateColumns:[
+                "repeat(2, 1fr)",
+                "repeat(2, 1fr)",
+                "repeat(2, 1fr)",
+                "repeat(2, 1fr)",
+              ],
               justifyContent: "center",
               alignItems: "center",
               // marginRight: "9px"
@@ -178,28 +183,30 @@ function Navbar() {
             <div style={{ paddingRight: "10px" }}>
               <h3 className={Styles.login_icon}>
                 <FaRegUserCircle
-                  style={{ fontSize: "23px", fontWeight: "100" }}  
+                  style={{ fontSize: "23px", fontWeight: "100" }}
                 />
-                {!isAuth && 
-                <NavLink to="/login">
-                <h5 >
-                  {isAuth ? "Logout" : "Login/Signup"}
-                </h5>
-              </NavLink>
-                }
-                {isAuth && 
-               
-                <h5 >
-                 <div onClick={()=>{logoutHandler()}}>{isAuth ? "Logout" : "Login/Signup"}</div> 
-                </h5>
-           
-                }
-              
+                {!isAuth && (
+                  <NavLink to="/login">
+                    <h5>{isAuth ? "Logout" : "Login/Signup"}</h5>
+                  </NavLink>
+                )}
+                {isAuth && (
+                  <h5>
+                    <div
+                      onClick={() => {
+                        logoutHandler();
+                      }}
+                    >
+                      {isAuth ? "Logout" : "Login/Signup"}
+                    </div>
+                  </h5>
+                )}
               </h3>
             </div>
+            <div>
             <NavLink to="/postad">
               <button className={Styles.postAd}>Post Free Ad</button>
-            </NavLink>
+            </NavLink></div>
           </div>
         </div>
         <div className={Styles.NavbarsmallScreen}>

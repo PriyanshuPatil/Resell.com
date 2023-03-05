@@ -1,38 +1,49 @@
 import React from "react";
-import { Button } from "@chakra-ui/react";
+import { Box, Button, Grid, GridItem } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
+  const navigate=useNavigate()
   return (
     <div
       className="main-footer-component"
-      style={{
+      style={{ width:"80%",
+      margin:"auto",
         borderBottom: "1px solid",
         padding: "1rem",
         borderTop: "1px solid",
         marginTop: "1rem",
-        textAlign: "center"
+        textAlign: "center",
+       
+        
       }}
     >
-      <div
+      <Grid 
         className="footer-two-social-icon"
         style={{
-          display: "flex",
+          display: "grid",
           gap: "25rem",
           alignItems: "center",
           justifyContent: "center",
-          padding: "1rem",
+           gridTemplateColumns:[
+          "repeat(1, 1fr)",
+          "repeat(1, 1fr)",
+          "repeat(1, 1fr)",
+          "repeat(1, 1fr)",
+        ]
         }}
+       
       >
-        <div>
+        <GridItem>
           <p style={{ fontSize: "14px", marginBottom: "1rem" }}>
             <b>Sign up to our email list and receive 20% off your next order</b>
           </p>
-          <Button colorScheme="gray" variant="solid">
+          <Button colorScheme="gray" variant="solid" onClick={()=>{navigate("/register")}}>
             SIGN UP
           </Button>
-        </div>
+        </GridItem>
 
-        <div>
+        {/* <GridItem>
           <p style={{ fontSize: "14px", marginBottom: "1rem" }}>
             <b>Connect with us</b>
           </p>
@@ -66,70 +77,82 @@ const Footer = () => {
               alt=""
             />
           </div>
-        </div>
-      </div>
-
-      <div
-        className="help-information-flex-list-layout"
-        style={{
-          display: "flex",
-          gap: "8rem",
-          justifyContent: "center",
-          fontSize: "15px",
-          fontWeight: "200",
-          marginTop: "4rem",
-        }}
-      >
-        <div style={{ borderTop: "1px solid", padding: "1rem" }}>
-          <ul>
-            <ul style={{ marginBottom: "1rem" }}>
-              <b>Help & Information</b>
+        </GridItem> */}
+      </Grid>
+      <Grid >
+        <Grid templateColumns={[
+        "repeat(1, 1fr)",
+        "repeat(1, 1fr)",
+        "repeat(2, 1fr)",
+        "repeat(2, 1fr)",
+      ]}
+          className="help-information-flex-list-layout"
+          style={{
+            display: "grid",
+            gap: "1rem",
+            justifyContent: "center",
+            fontSize: "15px",
+            fontWeight: "200",
+            marginTop: "4rem",
+            templateColumns:[
+              "repeat(1, 1fr)",
+              "repeat(1, 1fr)",
+              "repeat(2, 1fr)",
+              "repeat(2, 1fr)",
+            ]
+          }}
+        >
+          <GridItem style={{ borderTop: "1px solid", padding: "1rem" }}>
+            <ul>
+              <ul style={{ marginBottom: "1rem" }}>
+                <b>Help & Information</b>
+              </ul>
+              <ul>Customer Service</ul>
+              <ul>Delivery Information</ul>
+              <ul>Returns and Refund</ul>
+              <ul>Help Center</ul>
+              <ul>Track my Order</ul>
             </ul>
-            <ul>Customer Service</ul>
-            <ul>Delivery Information</ul>
-            <ul>Returns and Refund</ul>
-            <ul>Help Center</ul>
-            <ul>Track my Order</ul>
-          </ul>
-        </div>
+          </GridItem>
 
-        <div style={{ borderTop: "1px solid", padding: "1rem" }}>
-          <ul>
-            <ul style={{ marginBottom: "1rem" }}>
-              <b>About SkinStore</b>
+          <GridItem style={{ borderTop: "1px solid", padding: "1rem" }}>
+            <ul>
+              <ul style={{ marginBottom: "1rem" }}>
+                <b>About SkinStore</b>
+              </ul>
+              <ul>Key Workers Discount</ul>
+              <ul>About Us</ul>
+              <ul>Affiliate Program</ul>
+              <ul>Brand Directory</ul>
+              <ul>Coupon Code</ul>
+              <ul>Refer a friend</ul>
+              <ul>Student Discount</ul>
             </ul>
-            <ul>Key Workers Discount</ul>
-            <ul>About Us</ul>
-            <ul>Affiliate Program</ul>
-            <ul>Brand Directory</ul>
-            <ul>Coupon Code</ul>
-            <ul>Refer a friend</ul>
-            <ul>Student Discount</ul>
-          </ul>
-        </div>
+          </GridItem>
 
-        <div style={{ borderTop: "1px solid", padding: "1rem" }}>
-          <ul>
-            <ul style={{ marginBottom: "1rem" }}>
-              <b>Legal</b>
+          <GridItem style={{ borderTop: "1px solid", padding: "1rem" }}>
+            <ul>
+              <ul style={{ marginBottom: "1rem" }}>
+                <b>Legal</b>
+              </ul>
+              <ul>Cookie Information</ul>
+              <ul>Privacy Policy</ul>
+              <ul>Terms and Condition</ul>
+              <ul>Modern Slavory Statement</ul>
             </ul>
-            <ul>Cookie Information</ul>
-            <ul>Privacy Policy</ul>
-            <ul>Terms and Condition</ul>
-            <ul>Modern Slavory Statement</ul>
-          </ul>
-        </div>
+          </GridItem>
 
-        <div style={{ borderTop: "1px solid", padding: "1rem" }}>
-          <ul>
-            <ul style={{ marginBottom: "1rem" }}>
-              <b>How to Contact Us</b>
+          <GridItem style={{ borderTop: "1px solid", padding: "1rem" }}>
+            <ul>
+              <ul style={{ marginBottom: "1rem" }}>
+                <b>How to Contact Us</b>
+              </ul>
+              <ul>Message Us</ul>
+              <ul>Free Beauty Consultattions</ul>
             </ul>
-            <ul>Message Us</ul>
-            <ul>Free Beauty Consultattions</ul>
-          </ul>
-        </div>
-      </div>
+          </GridItem>
+        </Grid>
+      </Grid>
     </div>
   );
 };

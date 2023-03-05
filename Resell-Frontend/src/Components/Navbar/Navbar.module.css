@@ -4,6 +4,7 @@
   display: flex;
   justify-content: center;
   border-bottom: 1px solid rgba(128, 128, 128, 0.217);
+  background-color: white;
 }
 
 .mainNav {
@@ -20,6 +21,7 @@
   z-index: 999;
   margin-bottom: 4px;
   max-width: 1247px;
+  background-color: white;
   border-bottom: 1px solid rgba(128, 128, 128, 0.312);
 }
 
@@ -32,6 +34,7 @@
   background-color: white;
   padding: 10px 0px;
   margin-top: 5px;
+
 }
 
 .Navbar {
@@ -52,6 +55,7 @@ button {
 }
 
 .logoBox {
+  background-color: white;
   display: flex;
   align-items: center;
   width: 12%;

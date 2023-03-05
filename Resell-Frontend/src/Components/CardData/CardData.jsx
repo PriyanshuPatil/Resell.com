@@ -1,4 +1,4 @@
-import {Box,Flex,Heading,Text,Spacer,Link,Image} from '@chakra-ui/react'
+import {Box,Flex,Heading,Text,Spacer,Link,Image, Grid} from '@chakra-ui/react'
 import { useNavigate } from 'react-router-dom'
 import AdCard from '../AdCard/AdCard'
 
@@ -12,43 +12,48 @@ return (
         <Spacer/>
         <Link color="blue" fontSize='13px' m='auto' >{props.linkdata1}</Link>
     </Flex>
-    <Flex gap='25px' mt='30px'  >
-        <Box w='13%'  >
+    <Grid templateColumns={[
+          "repeat(1, 1fr)",
+          "repeat(3, 1fr)",
+          "repeat(4, 1fr)",
+          "repeat(7, 1fr)",
+        ]} gap='25px' mt='30px'  >
+        <Box   >
             <Image src={props.imgurl1} h='150px' w='100%'/>
             <Text textAlign={"center"} fontSize='18px' color='black'>{props.imgtext1}</Text>
             <Text fontSize='11px'>{props.author1}</Text>
         </Box>
-        <Box w='13%'>
+        <Box >
             <Image src={props.imgurl2} h='150px' w='100%'/>
             <Text textAlign={"center"} fontSize='18px' color='black'>{props.imgtext2}</Text>
             <Text fontSize='11px'>{props.author2}</Text>
         </Box>
-        <Box w='13%'>
+        <Box>
             <Image src={props.imgurl3} h='150px'w='100%'/>
             <Text textAlign={"center"} fontSize='18px' color='black'>{props.imgtext3}</Text>
             <Text fontSize='11px'>{props.author3}</Text>
         </Box>
-        <Box w='13%'>
+        <Box >
             <Image src={props.imgurl4}  h='150px' w='100%'/>
             <Text textAlign={"center"} fontSize='18px' color='black'>{props.imgtext4}</Text>
             <Text fontSize='11px'>{props.author4}</Text>
         </Box>
-        <Box w='13%'>
+        <Box >
             <Image src={props.imgurl5} h='150px' w='100%'/>
             <Text textAlign={"center"} fontSize='18px' color='black'>{props.imgtext5}</Text>
             <Text fontSize='11px'>{props.author5}</Text>
         </Box>
-        <Box w='13%'>
+        <Box >
             <Image src={props.imgurl6} h='150px' w='100%'/>
             <Text textAlign={"center"} fontSize='18px' color='black'>{props.imgtext6}</Text>
             <Text fontSize='11px'>{props.author2}</Text>
         </Box>
-        <Box w='13%'>
+        <Box >
             <Image src={props.imgurl7} h='150px'w='100%'/>
             <Text textAlign={"center"} fontSize='18px' color='black'>{props.imgtext3}</Text>
             <Text fontSize='11px'>{props.author7}</Text>
         </Box>
-    </Flex>
+    </Grid>
     </Box>
     </Box>
 )
